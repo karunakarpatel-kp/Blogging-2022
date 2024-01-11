@@ -225,6 +225,13 @@ const PreviewImage = () => {
           </Grid>
         </Grid>
       </Box>
+      <br />
+
+      <Alert severity="info" sx={{ mt: 3, width: { xs: 5 / 5, sm: 5 / 5, md: 3 / 5, lg: 3 / 5 }, margin: "auto" }}>
+        <AlertTitle>Note</AlertTitle>
+        Change the slider to get your desired compression
+      </Alert>
+
       <Box p={3} sx={{ width: { xs: 5 / 5, sm: 5 / 5, md: 4.5 / 5, lg: 4.5 / 5 }, border: 0, margin: "auto" }}>
         <Stack direction="column">
           <Slider
@@ -237,19 +244,19 @@ const PreviewImage = () => {
           />
         </Stack>
 
-        <Stack direction="row" display="flex" flexWrap="wrap" spacing={2} mt={2}>
-          <Box flexGrow={1}>
+        <Stack direction="row" display="flex" flexWrap="wrap" spacing={{ xs: 0, sm: 0, md: 2, lg: 2 }} mt={2}>
+          <Box flexGrow={1} mb={{ xs: 2, sm: 2, md: 0, lg: 0 }}>
             <Alert severity="info">
               <AlertTitle>Original Size </AlertTitle>
               {formatBytes(getCentralFile.fileSize)}
             </Alert>
           </Box>
-          <Box flexGrow={1}>
+          {/* <Box flexGrow={1}>
             <Alert>
               <AlertTitle>Reduced Size By</AlertTitle>
               {formatBytes(getCentralFile.fileSize - getCompressedFile.fileSize)}
             </Alert>
-          </Box>
+          </Box> */}
           <Box flexGrow={1}>
             <Alert severity="warning">
               <AlertTitle>Compressed Size</AlertTitle>
