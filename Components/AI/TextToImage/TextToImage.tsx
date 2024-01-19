@@ -3,6 +3,7 @@ import { Box, Button, FormControl, MenuItem, Select, TextField } from "@mui/mate
 import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { sendUserEnteredPrompt } from "store/AIUtilitySlice";
+import { callTextToSpeechService } from "store/ai/TextToSpeechSlice/TextToSpeechSlice";
 import { AppDispatch } from "store/centralStore";
 
 const TextToImage = () => {
@@ -17,6 +18,7 @@ const TextToImage = () => {
     } else if (userPromptMsg.length > 0) {
       setPromptFieldError(false);
       dispatch(sendUserEnteredPrompt(userPromptMsg));
+      dispatch(callTextToSpeechService());
     }
   };
 
@@ -29,7 +31,7 @@ const TextToImage = () => {
 
   return (
     <>
-      <Box component="form" boxShadow={{ xs: 0, sm: 0, md: 9, lg: 9 }}>
+      <Box component="form" boxShadow={{ xs: 0, sm: 0, md: 3, lg: 3 }}>
         <TextField
           fullWidth
           variant="outlined"

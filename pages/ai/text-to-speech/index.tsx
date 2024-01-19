@@ -18,14 +18,16 @@ import WelcomeSVG from "@Public/welcome.svg";
 import TextToImage from "@Components/AI/TextToImage/TextToImage";
 import WelcomeScrn from "@Components/AI/TextToImage/WelcomeScrn";
 import LoadingScrn from "@Components/AI/TextToImage/LoadingScrn";
+import HeadingOne from "@Components/Elements/Headings/HeadingOne";
 
-const ImageToText: NextPageWithLayout = () => {
+const TextToSpeech: NextPageWithLayout = () => {
   const getDataLoadingStatus = useSelector((state: RootState) => state.YTAPISlice.status);
   return (
     <>
       <ThemeProvider theme={Theme}>
         <HeaderSection
-          title={SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.title}
+          // title={SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.title}
+          title="Text To Speech"
           description={SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.description!}
           image={SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.ogImageURL}
           url={SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.absoluteURL}
@@ -49,7 +51,8 @@ const ImageToText: NextPageWithLayout = () => {
               sx={{ mb: { xs: 2, sm: 2, md: 3, lg: 3, color: "white" } }}
               id="title"
             >
-              {SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.title}
+              {/* {SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.title} */}
+              Text To Speech Service
             </Typography>
             <Box
               margin="auto"
@@ -90,7 +93,10 @@ const ImageToText: NextPageWithLayout = () => {
             justifyContent="center"
             alignItems="center"
           >
-            <TextToImage />
+            <Box>
+              <HeadingOne title="Text to Image" id="title" />
+              <TextToImage />
+            </Box>
           </Grid>
           {/* RightContent */}
           <Grid item xs={12} sm={12} md={7} lg={9} display="flex" justifyContent="center" alignItems="center">
@@ -106,4 +112,4 @@ const ImageToText: NextPageWithLayout = () => {
   );
 };
 
-export default ImageToText;
+export default TextToSpeech;

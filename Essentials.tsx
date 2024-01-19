@@ -107,8 +107,8 @@ export const dynamicLastUpdatedTime = () => {
 };
 
 export const BASE_URL: { HOME_PAGE_BASE_URL: string; BLOG_PAGE_BASE_URL: string } = {
-  HOME_PAGE_BASE_URL: "https://www.karunakarpatel.com",
-  BLOG_PAGE_BASE_URL: "https://www.karunakarpatel.com/Blog",
+  HOME_PAGE_BASE_URL: process.env.HOME_PAGE_BASE_URL!,
+  BLOG_PAGE_BASE_URL: process.env.BLOG_PAGE_BASE_URL!,
 };
 
 export const blogPostURLS: blogPostURLSProps = {
@@ -412,8 +412,8 @@ export const blogPostsObj: blogPostsObjProps[] = [
   {
     id: 6,
     // url: `${blogPostURLS.REDUCE_IMAGE_SIZE_IN_KB_PAGE_RELATIVE}`,
-    url: "/ai/text-to-image",
-    title: "AI",
+    url: "/ai/text-to-speech",
+    title: "Text To Speech ",
     // title: `${SEO_OBJ.REDUCE_IMAGE_SIZE_TO_KB_PAGE.title}`,
     description: `${SEO_OBJ.REDUCE_IMAGE_SIZE_TO_KB_PAGE.description}`,
     lastUpdateTime: `${SEO_OBJ.REDUCE_IMAGE_SIZE_TO_KB_PAGE.lastUpdateTime}`,
