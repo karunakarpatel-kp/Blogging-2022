@@ -14,6 +14,7 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "store/centralStore";
 import { resetYTSlice } from "store/YTAPISlice";
 import { resetImgReducerSlice } from "store/imgReducerSlice";
+import { resetTextToSpeechSlice } from "store/ai/TextToSpeechSlice/TextToSpeechSlice";
 
 const Navigation = () => {
   const [homePageActive, setHomePageActive] = useState<boolean>(false);
@@ -26,6 +27,7 @@ const Navigation = () => {
   const onLogoClickHandler = () => {
     dispatch(resetYTSlice(null));
     dispatch(resetImgReducerSlice(null));
+    dispatch(resetTextToSpeechSlice(null));
   };
 
   useEffect(() => {

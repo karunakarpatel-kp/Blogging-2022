@@ -8,7 +8,7 @@ const nextConfig = {
     BLOG_PAGE_BASE_URL: process.env.BLOG_PAGE_BASE_URL,
     AI_PAGE_BASE_URL: process.env.AI_PAGE_BASE_URL,
     HUGGING_FACE_TOKEN: process.env.HUGGING_FACE_TOKEN,
-    TEXT_TO_SPEECH_API_SERVICE: process.env.TEXT_TO_SPEECH_API_SERVICE,
+    FACEBOOK_TEXT_TO_SPEECH_URL: process.env.FACEBOOK_TEXT_TO_SPEECH_URL,
   },
   images: {
     remotePatterns: [

@@ -20,8 +20,12 @@ import WelcomeScrn from "@Components/AI/TextToImage/WelcomeScrn";
 import LoadingScrn from "@Components/AI/TextToImage/LoadingScrn";
 import HeadingOne from "@Components/Elements/Headings/HeadingOne";
 
+import { pipeline } from "@xenova/transformers";
+
 const TextToSpeech: NextPageWithLayout = () => {
-  const getDataLoadingStatus = useSelector((state: RootState) => state.YTAPISlice.status);
+  const text2SpeechLoadingStatus = useSelector((state: RootState) => state.TextToSpeechSlice.text2SpeechDataLoading);
+  const text2SpeechData = useSelector((state: RootState) => state.TextToSpeechSlice.text2SpeechData);
+
   return (
     <>
       <ThemeProvider theme={Theme}>
@@ -100,8 +104,15 @@ const TextToSpeech: NextPageWithLayout = () => {
           </Grid>
           {/* RightContent */}
           <Grid item xs={12} sm={12} md={7} lg={9} display="flex" justifyContent="center" alignItems="center">
-            {getDataLoadingStatus === null && <WelcomeScrn />}
-            {false ? <LoadingScrn /> : null}
+            {(text2SpeechData === null && text2SpeechLoadingStatus === null) || text2SpeechLoadingStatus === "" ? (
+              <WelcomeScrn />
+            ) : text2SpeechLoadingStatus === "PENDING" ? (
+              <LoadingScrn />
+            ) : (
+              <audio controls controlsList="download" autoPlay muted src={text2SpeechData!}>
+                Your browser does not support the audio element.
+              </audio>
+            )}
           </Grid>
         </Grid>
 
@@ -113,3 +124,38 @@ const TextToSpeech: NextPageWithLayout = () => {
 };
 
 export default TextToSpeech;
+
+// ! API Service Use Case
+// const [audioData, setAudioData] = useState<any>();
+//   async function query() {
+//     const response = await fetch("https://api-inference.huggingface.co/models/facebook/mms-tts-eng", {
+//       headers: { Authorization: "Bearer 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" },
+//       method: "POST",
+//       body: JSON.stringify({
+//         inputs:
+//           "I love you pavani and i love you from the bottom of my heart and karunakar and pavani had married together with no dowry",
+//       }),
+//     });
+//     const result = await response.blob();
+//     return result;
+//   }
+
+//   useEffect(() => {
+//     // usingPipeline();
+//     // query().then((response) => {
+//     //   // Returns a byte object of the Audio wavform. Use it directly!
+//     //   console.log(response, "RESPONSE From QUERY BLOCK");
+//     //   const url = URL.createObjectURL(response);
+//     //   console.log(url, "URL");
+//     //   setAudioData(url);
+//     // });
+//   }, []);
+
+//   useEffect(() => {
+//     // if (text2SpeechData !== null) {
+//     //   const blob = new Blob([text2SpeechData], { type: "audio/flac" });
+//     //   const blobURL = URL.createObjectURL(blob);
+//     //   console.log(blobURL, "blobURL use Effect");
+//     //   setAudioData(blobURL);
+//     // }
+//   }, [text2SpeechData]);

@@ -1,58 +1,38 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { config } from "process";
+import { RootState } from "store/centralStore";
 
 interface TextToSpeechProps {
   text2SpeechData: any;
-  text2SpeechDataloading: "PENDING" | "FULLFILLED" | "REJECTED";
+  text2SpeechDataloading: "PENDING" | "FULLFILLED" | "REJECTED" | "";
 }
 
 const initialState = {
   text2SpeechData: null,
-  text2SpeechDataLoading: "PENDING",
+  text2SpeechDataLoading: "",
 };
 
 export const callTextToSpeechService = createAsyncThunk("callTextToSpeechService", async (_, thunkAPI) => {
-  // const apiEndPoint = "/api/ai/TextToSpeech/genTextToSpeech";
-  // const headers = {
-  //   "Content-Type": "application/json",
-  //   Authorization: `Bearer ${process.env.HUGGING_FACE_TOKEN}`,
-  // };
-
-  const dataToSend = {
-    inputs: "A car on the beach with sunset as a background",
-    modelURL: process.env.TEXT_TO_SPEECH_API_SERVICE,
-  };
-
-  // try {
-  //   const response = await axios.post(apiEndPoint, JSON.stringify(dataToSend), { headers });
-  //   console.log(response, "Response From FrontEnd...!");
-  // } catch (error) {
-  //   console.log(error, "Error From FrontEnd...!");
-  // }
+  const centralState: any = thunkAPI.getState();
+  const userEnteredTextInput = centralState.AIUtilitySlice.userEnteredPrompt;
   try {
-    // Make a POST request to the server's API endpoint to generate audio
-    const response = await fetch("/api/ai/TextToSpeech/genTextToSpeech", {
+    const modelFetchRes = await fetch(`${process.env.FACEBOOK_TEXT_TO_SPEECH_URL}`, {
+      headers: { Authorization: `Bearer ${process.env.HUGGING_FACE_TOKEN}` },
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(dataToSend),
+      body: JSON.stringify({
+        inputs: userEnteredTextInput,
+      }),
     });
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch audio data.");
+    if (!modelFetchRes.ok) {
+      throw new Error("Internal Server Error");
     }
-
-    // Get the audio data as an ArrayBuffer
-    const data = await response.arrayBuffer();
-
-    // Convert ArrayBuffer to Blob and create a URL for the audio
-    const blob = new Blob([data], { type: "audio/mpeg" });
-    const audioUrl = URL.createObjectURL(blob);
-    return audioUrl;
+    const modelFetchData = await modelFetchRes.blob();
+    const blobURL = URL.createObjectURL(modelFetchData);
+    return blobURL;
   } catch (error) {
-    console.log(Error, "Error From Client");
+    console.log(error, "Error with API Service");
   }
 });
 
