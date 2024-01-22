@@ -16,6 +16,8 @@ import seo from "@Public/seo.jpg";
 import { ReactElement } from "react";
 import { NextPageWithLayout } from "./_app";
 import { SEO_OBJ, blogPostsObj } from "Essentials";
+import SnackBar from "@Components/UI/Snackbars/CustomSnackBar";
+import CustomSnackBar from "@Components/UI/Snackbars/CustomSnackBar";
 
 const Home: NextPageWithLayout = () => {
   return (
@@ -30,7 +32,7 @@ const Home: NextPageWithLayout = () => {
       />
 
       <Box textAlign="center" mb={3}>
-        <Typography variant="h6">Recent Articles</Typography>
+        <Typography>Recent Articles</Typography>
       </Box>
 
       <Grid container sx={{ spacing: { xs: 0, sm: 2, md: 2, lg: 2 }, pl: { xs: 1 } }}>

@@ -2,7 +2,7 @@ import { LoadingButton } from "@mui/lab";
 import { Box, Button, ButtonGroup, FormControl, MenuItem, Select, Stack, TextField } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { sendUserEnteredPrompt } from "store/AIUtilitySlice";
+import { sendUserEnteredPrompt } from "store/ai/AIUtilitySlice";
 import { callTextToSpeechService } from "store/ai/TextToSpeechSlice/TextToSpeechSlice";
 import { AppDispatch, RootState } from "store/centralStore";
 

@@ -21,6 +21,7 @@ import LoadingScrn from "@Components/AI/TextToImage/LoadingScrn";
 import HeadingOne from "@Components/Elements/Headings/HeadingOne";
 
 import { pipeline } from "@xenova/transformers";
+import CustomSnackBar from "@Components/UI/Snackbars/CustomSnackBar";
 
 const TextToSpeech: NextPageWithLayout = () => {
   const text2SpeechLoadingStatus = useSelector((state: RootState) => state.TextToSpeechSlice.text2SpeechDataLoading);
@@ -129,6 +130,7 @@ const TextToSpeech: NextPageWithLayout = () => {
         <Footer />
         <ModalContainer />
       </ThemeProvider>
+      <CustomSnackBar />
     </>
   );
 };

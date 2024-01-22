@@ -7,6 +7,7 @@ import Footer from "@UI/Footer";
 import { useRouter } from "next/router";
 import BrandingSection from "@UI/HomePageCards/BrandingSection";
 import Toolbar from "@mui/material/Toolbar";
+import CustomSnackBar from "@Components/UI/Snackbars/CustomSnackBar";
 
 interface MainLayoutProps {
   children?: React.ReactNode;
@@ -35,6 +36,7 @@ const MainLayout = (props: MainLayoutProps) => {
           </Grid>
         </Grid>
         <Footer />
+        <CustomSnackBar />
       </ThemeProvider>
     </>
   );

@@ -2,6 +2,7 @@ import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { config } from "process";
 import { RootState } from "store/centralStore";
+import { setShowSnackBar } from "store/utilitySlice";
 
 interface TextToSpeechProps {
   text2SpeechData: any;
@@ -30,9 +31,13 @@ export const callTextToSpeechService = createAsyncThunk("callTextToSpeechService
     }
     const modelFetchData = await modelFetchRes.blob();
     const blobURL = URL.createObjectURL(modelFetchData);
+    thunkAPI.dispatch(setShowSnackBar({ open: true, message: "Generated Successfully", variant: "success" }));
     return blobURL;
   } catch (error) {
     console.log(error, "Error with API Service");
+    thunkAPI.dispatch(
+      setShowSnackBar({ open: true, message: `Server Experiencing heavy load: ${error}`, variant: "error" })
+    );
   }
 });
 

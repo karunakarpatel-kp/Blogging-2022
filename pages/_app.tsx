@@ -11,6 +11,8 @@ import "../styles/globals.css";
 import "../styles/nProgress.css";
 import "../public/fonts/font.css";
 import { NextPage } from "next";
+import { SnackbarProvider } from "notistack";
+import CustomSnackBar from "@Components/UI/Snackbars/CustomSnackBar";
 
 // Layout of the Nextjs Page with TypeScript...!
 
@@ -30,7 +32,9 @@ const _app = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout || ((page) => page);
   return (
     <>
-      <Provider store={store}>{getLayout(<Component {...pageProps} />)}</Provider>
+      <SnackbarProvider maxSnack={1} preventDuplicate autoHideDuration={4000}>
+        <Provider store={store}>{getLayout(<Component {...pageProps} />)}</Provider>
+      </SnackbarProvider>
     </>
   );
 };

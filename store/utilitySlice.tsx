@@ -9,6 +9,12 @@ interface initialStateProps {
   getUserInputURL: string;
   getOpenDialogBoxStatus: boolean;
   videoURL: string;
+  showSnackBar: {
+    open: boolean;
+    // variant: "" | "success" | "error" | "warning" | "info" | undefined;
+    variant: any;
+    message: "";
+  };
 }
 
 const initialState: initialStateProps = {
@@ -19,6 +25,11 @@ const initialState: initialStateProps = {
   getUserInputURL: "",
   getOpenDialogBoxStatus: true,
   videoURL: "",
+  showSnackBar: {
+    open: false,
+    message: "",
+    variant: "",
+  },
 };
 
 const utilitySlice = createSlice({
@@ -46,6 +57,13 @@ const utilitySlice = createSlice({
     sendVideoURL: (state, action: PayloadAction<string>) => {
       state.videoURL = action.payload;
     },
+    setShowSnackBar: (state, action: PayloadAction<any>) => {
+      state.showSnackBar = {
+        open: action.payload.open,
+        variant: action.payload.variant,
+        message: action.payload.message,
+      };
+    },
   },
 });
 
@@ -59,4 +77,5 @@ export const {
   sendInputURL,
   setOpenDialogBox,
   sendVideoURL,
+  setShowSnackBar,
 } = utilitySlice.actions;
