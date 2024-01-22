@@ -1,14 +1,16 @@
 import { LoadingButton } from "@mui/lab";
-import { Box, Button, FormControl, MenuItem, Select, TextField } from "@mui/material";
-import React, { useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+import { Box, Button, ButtonGroup, FormControl, MenuItem, Select, Stack, TextField } from "@mui/material";
+import React, { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { sendUserEnteredPrompt } from "store/AIUtilitySlice";
 import { callTextToSpeechService } from "store/ai/TextToSpeechSlice/TextToSpeechSlice";
-import { AppDispatch } from "store/centralStore";
+import { AppDispatch, RootState } from "store/centralStore";
 
 const TextToImage = () => {
   const dispatch = useDispatch<AppDispatch>();
   const userInputRef = useRef<any>();
+  const text2SpeechLoadingStatus = useSelector((state: RootState) => state.TextToSpeechSlice.text2SpeechDataLoading);
+  const text2SpeechData = useSelector((state: RootState) => state.TextToSpeechSlice.text2SpeechData);
   const [promptFieldError, setPromptFieldError] = useState<boolean>(false);
 
   const onBtnClickHandler = () => {
@@ -29,32 +31,55 @@ const TextToImage = () => {
     }
   };
 
+  const clearTextFieldHandler = () => {
+    userInputRef.current.value = "";
+    userInputRef.current.focus();
+    dispatch(sendUserEnteredPrompt(""));
+  };
+
   return (
     <>
-      <Box component="form" boxShadow={{ xs: 0, sm: 0, md: 3, lg: 3 }}>
+      <Box component="form" boxShadow={{ xs: 0, sm: 0, md: 0, lg: 0 }}>
         <TextField
           fullWidth
           variant="outlined"
           multiline
           label="Enter Prompt In Here"
           minRows={8}
+          autoFocus
           inputRef={userInputRef}
           error={promptFieldError}
           onBlur={onBlurHandler}
           helperText={promptFieldError && "Please Enter Some Message"}
+          sx={{
+            maxHeight: "400px",
+            overflowY: "auto",
+            "&.MuiFormLabel-root, .MuiInputLabel-root": { marginTop: "5px" },
+          }}
         />
 
-        <LoadingButton
-          variant="contained"
-          disableElevation
-          fullWidth
-          loadingIndicator={"Generating..."}
-          onClick={onBtnClickHandler}
-          // loading
-          sx={{ mt: 1 }}
-        >
-          Generate AI Image
-        </LoadingButton>
+        <Box display="flex" flexGrow="1" width="100%">
+          <LoadingButton
+            variant="contained"
+            disableElevation
+            loadingIndicator={"Loading..."}
+            onClick={onBtnClickHandler}
+            loading={text2SpeechLoadingStatus === "PENDING" ? true : false}
+            size="large"
+            sx={{ mt: 2, mr: 2, flexGrow: 5 }}
+          >
+            {text2SpeechLoadingStatus === "PENDING" ? "Loading..." : "Generate"}
+          </LoadingButton>
+          <Button
+            variant="contained"
+            disableElevation
+            size="large"
+            sx={{ mt: 2, flexGrow: 1 }}
+            onClick={clearTextFieldHandler}
+          >
+            Clear
+          </Button>
+        </Box>
       </Box>
     </>
   );

@@ -90,26 +90,36 @@ const TextToSpeech: NextPageWithLayout = () => {
             border={0}
             xs={12}
             sm={12}
-            md={5}
-            lg={3}
-            p={1}
+            md={6}
+            lg={6}
+            p={2}
             display="flex"
             justifyContent="center"
             alignItems="center"
           >
-            <Box>
-              <HeadingOne title="Text to Image" id="title" />
+            <Box width="95%">
+              {/* <HeadingOne title="Text to Speech" id="title" /> */}
               <TextToImage />
             </Box>
           </Grid>
           {/* RightContent */}
-          <Grid item xs={12} sm={12} md={7} lg={9} display="flex" justifyContent="center" alignItems="center">
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={6}
+            lg={6}
+            border={0}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
             {(text2SpeechData === null && text2SpeechLoadingStatus === null) || text2SpeechLoadingStatus === "" ? (
               <WelcomeScrn />
             ) : text2SpeechLoadingStatus === "PENDING" ? (
               <LoadingScrn />
             ) : (
-              <audio controls controlsList="download" autoPlay muted src={text2SpeechData!}>
+              <audio controls controlsList="download" src={text2SpeechData!}>
                 Your browser does not support the audio element.
               </audio>
             )}

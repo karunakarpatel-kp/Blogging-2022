@@ -38,7 +38,7 @@ const genText2SpeechHandler = async (req: NextApiRequest, res: NextApiResponse) 
   };
 
   const modelFetchRes = await fetch("https://api-inference.huggingface.co/models/facebook/mms-tts-eng", {
-    headers: { Authorization: "Bearer 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" },
+    // headers: { Authorization: "Bearer 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" },
     method: "POST",
     body: JSON.stringify({
       inputs: "karunakar is good boy and he is very talented",
