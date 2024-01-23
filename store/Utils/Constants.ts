@@ -10,6 +10,12 @@ export const TextToImageServiceList: TextToImageServiceListProps[] = [
   },
   {
     name: "An Another Name Server",
-    url: process.env.STABLE_DIFFUSION_2_1!,
+    // url: process.env.STABLE_DIFFUSION_2_1!,
+    url: "hi 2",
+  },
+  {
+    name: "Third An Another Name Server",
+    // url: process.env.STABLE_DIFFUSION_2_1!,
+    url: "hi 3",
   },
 ];

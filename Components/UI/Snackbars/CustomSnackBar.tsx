@@ -12,7 +12,6 @@ const CustomSnackBar = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("Calling cleanUp");
     setTimeout(() => {
       dispatch(setShowSnackBar({ open: false, message: "", variant: "" }));
     }, 1500);

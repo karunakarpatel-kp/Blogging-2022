@@ -10,16 +10,25 @@ import Paragraph from "@Components/Elements/Paragraph/Paragraph";
 import Footer from "@Components/UI/Footer";
 import Navigation from "@Components/UI/Navigation";
 import Sharing from "@Components/SocialShare/Sharing";
-import { useSelector } from "react-redux";
-import { RootState } from "store/centralStore";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "store/centralStore";
 import ModalContainer from "@Components/UI/Modals/ModalContainer";
 import Image from "next/image";
 
 import CustomSnackBar from "@Components/UI/Snackbars/CustomSnackBar";
+import { callTextToImageService } from "store/ai/TextToImageSlice/TextToImageSlice";
+import TextToImageConverter from "@Components/AI/TextToImage/TextToImageConverter";
 
 const TextToImage: NextPageWithLayout = () => {
+  const dispatch = useDispatch<AppDispatch>();
   const text2SpeechLoadingStatus = useSelector((state: RootState) => state.TextToSpeechSlice.text2SpeechDataLoading);
   const text2SpeechData = useSelector((state: RootState) => state.TextToSpeechSlice.text2SpeechData);
+
+  const text2ImageData = useSelector((state: RootState) => state.TextToImageSlice.textToImageData);
+
+  const onBtnClickHandler = () => {
+    dispatch(callTextToImageService());
+  };
 
   return (
     <>
@@ -82,7 +91,7 @@ const TextToImage: NextPageWithLayout = () => {
           {/* Left Content */}
           <Grid
             item
-            border={0}
+            border={1}
             xs={12}
             sm={12}
             md={6}
@@ -93,9 +102,9 @@ const TextToImage: NextPageWithLayout = () => {
             alignItems="center"
           >
             <Box width="95%">
-              {/* <HeadingOne title="Text to Speech" id="title" /> */}
-              {/* <TextToImage /> */}
-              Left Content
+              <TextToImageConverter />
+              {/* <Button onClick={onBtnClickHandler}>HIT SERVICE</Button> */}
+              {/* {text2ImageData !== null && <Image src={text2ImageData} alt="hi" width={300} height={200} />} */}
             </Box>
           </Grid>
           {/* RightContent */}
