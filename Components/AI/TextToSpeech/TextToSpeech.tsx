@@ -3,10 +3,10 @@ import { Box, Button, ButtonGroup, FormControl, MenuItem, Select, Stack, TextFie
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { sendUserEnteredPrompt } from "store/ai/AIUtilitySlice";
-import { callTextToSpeechService } from "store/ai/TextToSpeechSlice/TextToSpeechSlice";
+import { callTextToSpeechService, resetTextToSpeechSlice } from "store/ai/TextToSpeechSlice/TextToSpeechSlice";
 import { AppDispatch, RootState } from "store/centralStore";
 
-const TextToImage = () => {
+const TextToSpeech = () => {
   const dispatch = useDispatch<AppDispatch>();
   const userInputRef = useRef<any>();
   const text2SpeechLoadingStatus = useSelector((state: RootState) => state.TextToSpeechSlice.text2SpeechDataLoading);
@@ -35,6 +35,7 @@ const TextToImage = () => {
     userInputRef.current.value = "";
     userInputRef.current.focus();
     dispatch(sendUserEnteredPrompt(""));
+    dispatch(resetTextToSpeechSlice(null));
   };
 
   return (
@@ -85,4 +86,4 @@ const TextToImage = () => {
   );
 };
 
-export default TextToImage;
+export default TextToSpeech;

@@ -14,16 +14,10 @@ import { useSelector } from "react-redux";
 import { RootState } from "store/centralStore";
 import ModalContainer from "@Components/UI/Modals/ModalContainer";
 import Image from "next/image";
-import WelcomeSVG from "@Public/welcome.svg";
-import TextToImage from "@Components/AI/TextToSpeech/TextToSpeech";
-import WelcomeScrn from "@Components/AI/TextToSpeech/WelcomeScrn";
-import LoadingScrn from "@Components/AI/TextToSpeech/LoadingScrn";
-import HeadingOne from "@Components/Elements/Headings/HeadingOne";
 
-import { pipeline } from "@xenova/transformers";
 import CustomSnackBar from "@Components/UI/Snackbars/CustomSnackBar";
 
-const TextToSpeech: NextPageWithLayout = () => {
+const TextToImage: NextPageWithLayout = () => {
   const text2SpeechLoadingStatus = useSelector((state: RootState) => state.TextToSpeechSlice.text2SpeechDataLoading);
   const text2SpeechData = useSelector((state: RootState) => state.TextToSpeechSlice.text2SpeechData);
 
@@ -100,7 +94,8 @@ const TextToSpeech: NextPageWithLayout = () => {
           >
             <Box width="95%">
               {/* <HeadingOne title="Text to Speech" id="title" /> */}
-              <TextToImage />
+              {/* <TextToImage /> */}
+              Left Content
             </Box>
           </Grid>
           {/* RightContent */}
@@ -115,7 +110,8 @@ const TextToSpeech: NextPageWithLayout = () => {
             justifyContent="center"
             alignItems="center"
           >
-            {(text2SpeechData === null && text2SpeechLoadingStatus === null) || text2SpeechLoadingStatus === "" ? (
+            <Box>Right Content</Box>
+            {/* {(text2SpeechData === null && text2SpeechLoadingStatus === null) || text2SpeechLoadingStatus === "" ? (
               <WelcomeScrn />
             ) : text2SpeechLoadingStatus === "PENDING" ? (
               <LoadingScrn />
@@ -127,7 +123,7 @@ const TextToSpeech: NextPageWithLayout = () => {
               <audio controls controlsList="download" src={text2SpeechData!}>
                 Your browser does not support the audio element.
               </audio>
-            )}
+            )} */}
           </Grid>
         </Grid>
 
@@ -139,39 +135,4 @@ const TextToSpeech: NextPageWithLayout = () => {
   );
 };
 
-export default TextToSpeech;
-
-// ! API Service Use Case
-// const [audioData, setAudioData] = useState<any>();
-//   async function query() {
-//     const response = await fetch("https://api-inference.huggingface.co/models/facebook/mms-tts-eng", {
-//       headers: { Authorization: "Bearer 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" },
-//       method: "POST",
-//       body: JSON.stringify({
-//         inputs:
-//           "I love you pavani and i love you from the bottom of my heart and karunakar and pavani had married together with no dowry",
-//       }),
-//     });
-//     const result = await response.blob();
-//     return result;
-//   }
-
-//   useEffect(() => {
-//     // usingPipeline();
-//     // query().then((response) => {
-//     //   // Returns a byte object of the Audio wavform. Use it directly!
-//     //   console.log(response, "RESPONSE From QUERY BLOCK");
-//     //   const url = URL.createObjectURL(response);
-//     //   console.log(url, "URL");
-//     //   setAudioData(url);
-//     // });
-//   }, []);
-
-//   useEffect(() => {
-//     // if (text2SpeechData !== null) {
-//     //   const blob = new Blob([text2SpeechData], { type: "audio/flac" });
-//     //   const blobURL = URL.createObjectURL(blob);
-//     //   console.log(blobURL, "blobURL use Effect");
-//     //   setAudioData(blobURL);
-//     // }
-//   }, [text2SpeechData]);
+export default TextToImage;

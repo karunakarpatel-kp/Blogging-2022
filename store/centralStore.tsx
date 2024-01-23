@@ -4,6 +4,7 @@ import YTAPISlice from "./YTAPISlice";
 import imgReducerSlice from "./imgReducerSlice";
 import AIUtilitySlice from "./ai/AIUtilitySlice";
 import TextToSpeechSlice from "./ai/TextToSpeechSlice/TextToSpeechSlice";
+import TextToImageSlice from "./ai/TextToImageSlice/TextToImageSlice";
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     imgReducerSlice: imgReducerSlice,
     AIUtilitySlice: AIUtilitySlice,
     TextToSpeechSlice: TextToSpeechSlice,
+    TextToImageSlice: TextToImageSlice,
   },
 });
 

@@ -423,4 +423,18 @@ export const blogPostsObj: blogPostsObjProps[] = [
     featuredImageAltText: `${SEO_OBJ.REDUCE_IMAGE_SIZE_TO_KB_PAGE.featuredImageAltText}`,
     ogImageURL: `${SEO_OBJ.REDUCE_IMAGE_SIZE_TO_KB_PAGE.ogImageURL}`,
   },
+  {
+    id: 7,
+    // url: `${blogPostURLS.YOUTUBE_VIDEO_TO_MP3_PAGE_RELATIVE}`,
+    url: "/ai/text-to-image",
+    title: "Text To Image Generator",
+    // title: `${SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.title}`,
+    description: `${SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.description}`,
+    lastUpdateTime: `${SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.lastUpdateTime}`,
+    publishedTime: `${SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.publishedTime}`,
+    tags: SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.tags!,
+    featuredImage: SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.featuredImage,
+    featuredImageAltText: `${SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.featuredImageAltText}`,
+    ogImageURL: `${SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.ogImageURL}`,
+  },
 ];

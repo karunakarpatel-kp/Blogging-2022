@@ -22,7 +22,7 @@ const WelcomeScrn = () => {
         </Box>
 
         <Alert severity="info" sx={{ width: { xs: 5 / 5, sm: 5 / 5, md: 4 / 5, lg: 4 / 5 }, margin: "auto" }}>
-          Please type the text prompt to see the magic of AI Image generator.
+          Please type the text prompt to see the magic of Text to speech AI generator.
         </Alert>
       </Grid>
     </>

@@ -56,8 +56,13 @@ export const TextToSpeechSlice = createSlice({
       state.text2SpeechData = null;
     });
     builder.addCase(callTextToSpeechService.fulfilled, (state, action: PayloadAction<any>) => {
-      state.text2SpeechDataLoading = "FULFILLED";
-      state.text2SpeechData = action.payload;
+      if (action.payload === undefined) {
+        state.text2SpeechData = null;
+        state.text2SpeechDataLoading = "REJECTED";
+      } else {
+        state.text2SpeechData = action.payload;
+        state.text2SpeechDataLoading = "FULFILLED";
+      }
     });
     builder.addCase(callTextToSpeechService.rejected, (state, action: PayloadAction<any>) => {
       state.text2SpeechDataLoading = "REJECTED";
