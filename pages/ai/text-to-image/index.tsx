@@ -1,5 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Alert, AlertTitle, Box, Button, Grid, Paper, Stack, ThemeProvider, Typography } from "@mui/material";
+import {
+  Alert,
+  AlertTitle,
+  Box,
+  Button,
+  CircularProgress,
+  Grid,
+  Paper,
+  Stack,
+  ThemeProvider,
+  Typography,
+} from "@mui/material";
 
 import HeaderSection from "@SEO/Head";
 import Theme, { themeColors } from "@Theme/Theme";
@@ -18,13 +29,12 @@ import Image from "next/image";
 import CustomSnackBar from "@Components/UI/Snackbars/CustomSnackBar";
 import { callTextToImageService } from "store/ai/TextToImageSlice/TextToImageSlice";
 import TextToImageConverter from "@Components/AI/TextToImage/TextToImageConverter";
+import WelcomeScreen from "@Components/UI/WelcomeScrn/WelcomeScreen";
 
 const TextToImage: NextPageWithLayout = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const text2SpeechLoadingStatus = useSelector((state: RootState) => state.TextToSpeechSlice.text2SpeechDataLoading);
-  const text2SpeechData = useSelector((state: RootState) => state.TextToSpeechSlice.text2SpeechData);
-
   const text2ImageData = useSelector((state: RootState) => state.TextToImageSlice.textToImageData);
+  const text2ImageLoadingStatus = useSelector((state: RootState) => state.TextToImageSlice.textToImageLoadingStatus);
 
   const onBtnClickHandler = () => {
     dispatch(callTextToImageService());
@@ -90,7 +100,7 @@ const TextToImage: NextPageWithLayout = () => {
           {/* Left Content */}
           <Grid
             item
-            border={1}
+            border={0}
             xs={12}
             sm={12}
             md={6}
@@ -116,7 +126,13 @@ const TextToImage: NextPageWithLayout = () => {
             justifyContent="center"
             alignItems="center"
           >
-            {text2ImageData !== null && <Image src={text2ImageData!} alt="generated-image" width={300} height={260} />}
+            {(text2ImageData === null && text2ImageLoadingStatus === null) || text2ImageLoadingStatus === "" ? (
+              <WelcomeScreen AlertMSG="Welcome Message of Text To Image Generator" />
+            ) : text2ImageLoadingStatus === "PENDING" ? (
+              <CircularProgress />
+            ) : (
+              text2ImageData !== null && <Image src={text2ImageData!} alt="generated-image" width={600} height={360} />
+            )}
           </Grid>
         </Grid>
 

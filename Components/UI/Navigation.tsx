@@ -15,6 +15,7 @@ import { AppDispatch } from "store/centralStore";
 import { resetYTSlice } from "store/YTAPISlice";
 import { resetImgReducerSlice } from "store/imgReducerSlice";
 import { resetTextToSpeechSlice } from "store/ai/TextToSpeechSlice/TextToSpeechSlice";
+import { resetTextToImageSlice } from "store/ai/TextToImageSlice/TextToImageSlice";
 
 const Navigation = () => {
   const [homePageActive, setHomePageActive] = useState<boolean>(false);
@@ -28,6 +29,7 @@ const Navigation = () => {
     dispatch(resetYTSlice(null));
     dispatch(resetImgReducerSlice(null));
     dispatch(resetTextToSpeechSlice(null));
+    dispatch(resetTextToImageSlice(null));
   };
 
   useEffect(() => {

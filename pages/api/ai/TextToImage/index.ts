@@ -24,7 +24,7 @@ const TextToImageServiceHandler = async (req: NextApiRequest, res: NextApiRespon
   //? below code
   const imgConstruct = `data:image/jpeg;base64, ${base64ImageData}`;
   const img = `<img src='${imgConstruct}' alt="simple" width="200" height="120" />`;
-  res.send(img);
+  res.send(imgConstruct);
 };
 
 export default TextToImageServiceHandler;

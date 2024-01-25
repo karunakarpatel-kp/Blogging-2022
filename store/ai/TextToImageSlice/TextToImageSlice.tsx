@@ -32,7 +32,7 @@ export const callTextToImageService = createAsyncThunk("callTextToImageService",
   try {
     const text2ImageResp = await axios.post("/api/ai/TextToImage", userInputObj, {});
     const text2imageData = await text2ImageResp.data;
-    const imgConstruct = `data:image/jpeg;base64, ${text2imageData}`;
+    // const imgConstruct = `data:image/jpeg;base64, ${text2imageData}`;
     thunkAPI.dispatch(
       setShowSnackBar({
         open: true,
@@ -40,7 +40,7 @@ export const callTextToImageService = createAsyncThunk("callTextToImageService",
         variant: "success",
       })
     );
-    return imgConstruct;
+    return text2imageData;
   } catch (error) {
     thunkAPI.dispatch(
       setShowSnackBar({
@@ -60,6 +60,13 @@ const TextToImageSlice = createSlice({
     resetTextToImageSlice: (state, action: PayloadAction<any>) => {
       state.textToImageData = null;
       state.textToImageLoadingStatus = "";
+      state.textToImageUserInputs = {
+        userPromptMsg: "",
+        userSelectedMenuItem: {
+          name: "",
+          url: "",
+        },
+      };
     },
     sendTextToImageUserInputs: (state, action: PayloadAction<any>) => {
       state.textToImageUserInputs.userPromptMsg = action.payload.userPromptMsg;
