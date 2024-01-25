@@ -112,11 +112,14 @@ const DownloadPlugin: any = () => {
               loading={getLoadingStatus === "PENDING" && true}
               disableRipple
               disableElevation
+              size="large"
               disableFocusRipple
               sx={{
                 bgcolor: "white",
                 color: "black",
-                width: 2 / 5,
+                // width: 2 / 5,
+                width: { xs: 5 / 5, sm: 5 / 5, md: 2 / 5, lg: 2 / 5 },
+
                 "&.MuiButton-root.MuiLoadingButton-root:hover": { backgroundColor: "white" },
               }}
               variant="outlined"
