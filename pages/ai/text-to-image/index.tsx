@@ -75,7 +75,6 @@ const TextToImage: NextPageWithLayout = () => {
                 lastUpdatedTime={DateMonthYearForBlogPost(SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.lastUpdateTime)}
                 tags={SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.tags!}
               />
-              {/* <DownloadPlugin /> */}
             </Box>
           </Box>
         </Grid>
@@ -103,8 +102,6 @@ const TextToImage: NextPageWithLayout = () => {
           >
             <Box width="95%">
               <TextToImageConverter />
-              {/* <Button onClick={onBtnClickHandler}>HIT SERVICE</Button> */}
-              {/* {text2ImageData !== null && <Image src={text2ImageData} alt="hi" width={300} height={200} />} */}
             </Box>
           </Grid>
           {/* RightContent */}
@@ -119,20 +116,7 @@ const TextToImage: NextPageWithLayout = () => {
             justifyContent="center"
             alignItems="center"
           >
-            <Box>Right Content</Box>
-            {/* {(text2SpeechData === null && text2SpeechLoadingStatus === null) || text2SpeechLoadingStatus === "" ? (
-              <WelcomeScrn />
-            ) : text2SpeechLoadingStatus === "PENDING" ? (
-              <LoadingScrn />
-            ) : text2SpeechLoadingStatus === "REJECTED" ? (
-              <Alert variant="outlined" severity="info">
-                Experiencing heavy load on our servers, please try after some time.
-              </Alert>
-            ) : (
-              <audio controls controlsList="download" src={text2SpeechData!}>
-                Your browser does not support the audio element.
-              </audio>
-            )} */}
+            {text2ImageData !== null && <Image src={text2ImageData!} alt="generated-image" width={300} height={260} />}
           </Grid>
         </Grid>
 

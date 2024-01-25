@@ -14,6 +14,7 @@ import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { TextToImageServiceList } from "store/Utils/Constants";
 import { sendUserEnteredPrompt } from "store/ai/AIUtilitySlice";
+import { callTextToImageService, sendTextToImageUserInputs } from "store/ai/TextToImageSlice/TextToImageSlice";
 import { callTextToSpeechService, resetTextToSpeechSlice } from "store/ai/TextToSpeechSlice/TextToSpeechSlice";
 import { AppDispatch, RootState } from "store/centralStore";
 
@@ -51,10 +52,9 @@ const TextToImageConverter = () => {
         userPromptMsg,
       };
 
-      console.log(totalOBJ, "TOTAL OBJ");
+      dispatch(sendTextToImageUserInputs(totalOBJ));
 
-      // dispatch(sendUserEnteredPrompt(userPromptMsg));
-      // dispatch(callTextToSpeechService());
+      dispatch(callTextToImageService());
     }
   };
 
@@ -72,12 +72,14 @@ const TextToImageConverter = () => {
   };
 
   const clearTextFieldHandler = () => {
+    const emptyObj = {
+      userPromptMsg: "",
+      userSelectedMenuItem: { name: "", url: "" },
+    };
     userInputRef.current.value = "";
     setUserSelectedMenuItem(null);
-    // userInputRef.current.focus();
     dispatch(sendUserEnteredPrompt(""));
-    // dispatch(resetTextToSpeechSlice(null));
-    console.log(TextToImageServiceList[0].url);
+    dispatch(sendTextToImageUserInputs(emptyObj));
   };
 
   return (

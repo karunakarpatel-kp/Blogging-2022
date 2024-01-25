@@ -20,6 +20,7 @@
     "@types/react-dom": "18.0.8",
     "@xenova/transformers": "^2.14.0",
     "axios": "^1.6.3",
+    "base-64": "^1.0.0",
     "cors": "^2.8.5",
     "eslint": "8.26.0",
     "eslint-config-next": "^13.1.2",
@@ -42,6 +43,7 @@
     "ytdl-core": "^4.11.5"
   },
   "devDependencies": {
+    "@types/base-64": "^1.0.2",
     "@types/cors": "^2.8.17",
     "@types/nprogress": "^0.2.3",
     "@types/react-scrollspy": "^3.3.5",
