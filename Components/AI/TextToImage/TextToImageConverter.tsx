@@ -22,8 +22,7 @@ const TextToImageConverter = () => {
   const dispatch = useDispatch<AppDispatch>();
   const userInputRef = useRef<any>();
 
-  const text2SpeechLoadingStatus = useSelector((state: RootState) => state.TextToSpeechSlice.text2SpeechDataLoading);
-  const text2SpeechData = useSelector((state: RootState) => state.TextToSpeechSlice.text2SpeechData);
+  const text2SpeechLoadingStatus = useSelector((state: RootState) => state.TextToImageSlice.textToImageLoadingStatus);
 
   const [userSelectedMenuItem, setUserSelectedMenuItem] = useState<any>(null);
   const [promptFieldError, setPromptFieldError] = useState<boolean>(false);
@@ -40,10 +39,10 @@ const TextToImageConverter = () => {
   const onBtnClickHandler = () => {
     const userPromptMsg = userInputRef.current.value;
 
-    if (userPromptMsg.trim() === "" && userSelectedMenuItem === null) {
+    if (userPromptMsg.trim() === "" || userSelectedMenuItem === null) {
       setPromptFieldError(true);
       setUserSelectModelError(true);
-    } else if (userPromptMsg.length > 0 && userSelectedMenuItem !== null) {
+    } else if (userPromptMsg.length > 0 || userSelectedMenuItem !== null) {
       setPromptFieldError(false);
       setUserSelectModelError(false);
 
@@ -117,6 +116,7 @@ const TextToImageConverter = () => {
           error={promptFieldError}
           onBlur={onTextFieldBlurHandler}
           helperText={promptFieldError && "Please Enter Some Message"}
+          placeholder="Ex: Astranaut riding a horse on mars"
           sx={{
             maxHeight: "400px",
             overflowY: "auto",
@@ -128,9 +128,9 @@ const TextToImageConverter = () => {
           <LoadingButton
             variant="contained"
             disableElevation
-            loadingIndicator={"Loading..."}
+            loadingIndicator={"Generating Image..."}
             onClick={onBtnClickHandler}
-            // loading={text2SpeechLoadingStatus === "PENDING" ? true : false}
+            loading={text2SpeechLoadingStatus === "PENDING" ? true : false}
             size="large"
             sx={{ mt: 2, mr: 2, flexGrow: 5 }}
           >

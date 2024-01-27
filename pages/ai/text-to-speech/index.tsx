@@ -22,6 +22,7 @@ import HeadingOne from "@Components/Elements/Headings/HeadingOne";
 
 import { pipeline } from "@xenova/transformers";
 import CustomSnackBar from "@Components/UI/Snackbars/CustomSnackBar";
+import WelcomeScreen from "@Components/UI/WelcomeScrn/WelcomeScreen";
 
 const TextToSpeech: NextPageWithLayout = () => {
   const text2SpeechLoadingStatus = useSelector((state: RootState) => state.TextToSpeechSlice.text2SpeechDataLoading);
@@ -116,7 +117,7 @@ const TextToSpeech: NextPageWithLayout = () => {
             alignItems="center"
           >
             {(text2SpeechData === null && text2SpeechLoadingStatus === null) || text2SpeechLoadingStatus === "" ? (
-              <WelcomeScrn />
+              <WelcomeScreen AlertMSG="Welcome alert message of Text To Speech Image Generator" />
             ) : text2SpeechLoadingStatus === "PENDING" ? (
               <LoadingScrn />
             ) : text2SpeechLoadingStatus === "REJECTED" ? (

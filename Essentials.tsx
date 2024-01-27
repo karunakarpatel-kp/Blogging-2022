@@ -426,7 +426,7 @@ export const blogPostsObj: blogPostsObjProps[] = [
   {
     id: 7,
     // url: `${blogPostURLS.YOUTUBE_VIDEO_TO_MP3_PAGE_RELATIVE}`,
-    url: "/ai/text-to-image",
+    url: "/ai/free-text-to-image-generator",
     title: "Text To Image Generator",
     // title: `${SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.title}`,
     description: `${SEO_OBJ.YOUTUBE_VIDEO_TO_MP3_PAGE.description}`,

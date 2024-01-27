@@ -1,4 +1,10 @@
-PIXELS_API_KEY=
-BASE_URL=
-HUGGING_FACE_TOKEN=
-FACEBOOK_TEXT_TO_SPEECH_URL=
+PIXELS_API_KEY=x5Q4Oy1uPz5GdfZfLFTjDpIyrARNBpRG0VoHA1xWG8gmLQ607ejW0gtE
+BASE_URL=https://www.karunakarpatel.com
+HUGGING_FACE_TOKEN=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
+FACEBOOK_TEXT_TO_SPEECH_URL=https://api-inference.huggingface.co/models/facebook/mms-tts-eng
+STABLE_DIFFUSION_2_1_URL=https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2-1
+OPEN_JOURNEY_URL= https://api-inference.huggingface.co/models/prompthero/openjourney
+IP_ADAPTER_FACE_ID_URL=https://api-inference.huggingface.co/models/h94/IP-Adapter-FaceID
+STABLE_DIFFUSION_1_5_URL=https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5
+STABLE_DIFFUSION_BASE_1_0_URL=https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0
+EPIC_PHOTOGASM_URL=https://api-inference.huggingface.co/models/Yntec/epiCPhotoGasm

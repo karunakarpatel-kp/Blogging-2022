@@ -35,6 +35,7 @@ const TextToImage: NextPageWithLayout = () => {
   const dispatch = useDispatch<AppDispatch>();
   const text2ImageData = useSelector((state: RootState) => state.TextToImageSlice.textToImageData);
   const text2ImageLoadingStatus = useSelector((state: RootState) => state.TextToImageSlice.textToImageLoadingStatus);
+  const userPromtMsg = useSelector((state: RootState) => state.TextToImageSlice.textToImageUserInputs.userPromptMsg);
 
   const onBtnClickHandler = () => {
     dispatch(callTextToImageService());
@@ -130,8 +131,24 @@ const TextToImage: NextPageWithLayout = () => {
               <WelcomeScreen AlertMSG="Welcome Message of Text To Image Generator" />
             ) : text2ImageLoadingStatus === "PENDING" ? (
               <CircularProgress />
+            ) : text2ImageLoadingStatus === "REJECTED" ? (
+              <Alert variant="outlined" severity="info">
+                Experiencing heavy load on our server, please try after some time.
+              </Alert>
             ) : (
-              text2ImageData !== null && <Image src={text2ImageData!} alt="generated-image" width={600} height={360} />
+              <>
+                <Box display={{ xs: "none", sm: "none", md: "block", lg: "block" }}>
+                  {text2ImageData !== null && (
+                    <Image src={text2ImageData!} alt={userPromtMsg} width={470} height={350} />
+                  )}
+                </Box>
+                {/*  For Mobiles */}
+                <Box display={{ xs: "block", sm: "block", md: "none", lg: "none" }}>
+                  {text2ImageData !== null && (
+                    <Image src={text2ImageData!} alt={userPromtMsg} width={370} height={280} />
+                  )}
+                </Box>
+              </>
             )}
           </Grid>
         </Grid>
