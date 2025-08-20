@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import Logo from "public/Logo.svg";
 import Image from "next/image";
-import { FaBlog, FaCar, FaCarSide, FaHome } from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { FaBlog, FaCar, FaCarSide, FaHome, FaToolbox } from "react-icons/fa";
+import { GiHamburgerMenu, GiToolbox } from "react-icons/gi";
 import { usePathname, useRouter } from "next/navigation";
 import { IoMdClose } from "react-icons/io";
 import KarunakarPatelImage from "@Public/karunakarImage.svg";
@@ -136,21 +136,30 @@ const Navigation = (props: NavigationProps) => {
         <div className="hidden md:block col-span-6 border-0 border-purple-400 m-0 p-0 ">
           <ul className="list-none flex space-x-6 text-white justify-end mt-2">
             <li>
-              <Link href="/" className={`${pathName === "/" ? "text-[#ffca3c]" : "text-white"}`}>
-                <FaHome size={27} />
+              <Link
+                href="/"
+                className={`${
+                  pathName === "/" ? "text-[#ffca3c]" : "text-white"
+                } font-normal text-xl underline underline-offset-4 decoration-slate-300`}
+              >
+                {/* <FaHome size={27} /> */}
+                Home
               </Link>
             </li>
-            {/* <li>
-              <Link href="/Blog" className="text-white">
-                <ImBlog size={25} className="pt-0" />
+            <li>
+              <Link href="/tools" className="text-white text-xl underline-offset-4 font-normal decoration-slate-300">
+                Tools
               </Link>
-            </li> */}
+            </li>
             <li>
               <Link
                 href="/Blog"
-                className={`${pathName === "/Blog" || pathName!.includes("/Blog") ? "text-[#ffca3c] " : "text-white"}`}
+                className={`${
+                  pathName === "/Blog" || pathName!.includes("/Blog") ? "text-[#ffca3c] " : "text-white"
+                } font-normal text-xl underline underline-offset-4 decoration-slate-300`}
               >
-                <FaBlog size={25} className="pt-0" />
+                {/* <FaBlog size={25} className="pt-0" /> */}
+                Blog
               </Link>
             </li>
             {/* <li>
