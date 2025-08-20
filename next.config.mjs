@@ -10,6 +10,10 @@ const nextConfig = {
     HOME_PAGE_BASE_URL: process.env.HOME_PAGE_BASE_URL,
     GOOGLE_ANALYTICS_TAG: process.env.GOOGLE_ANALYTICS_TAG,
   },
+  images: {
+    // remotePatterns: ["play-lh.googleusercontent.com"],
+    remotePatterns: [{ hostname: "play-lh.googleusercontent.com" }],
+  },
 };
 
 const withMDX = createMDX({
