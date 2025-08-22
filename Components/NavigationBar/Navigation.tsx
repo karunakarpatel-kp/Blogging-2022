@@ -162,14 +162,11 @@ const Navigation = (props: NavigationProps) => {
                 Blog
               </Link>
             </li>
-            {/* <li>
-              <Link
-                href="/"
-                className=" text-white p-2 px-6 border no-underline rounded-md hover:bg-purple-500 hover:text-white ease-in-out"
-              >
-                Contact Me
+            <li>
+              <Link href="/apps" className="text-white text-xl underline-offset-4 font-normal decoration-slate-300">
+                Apps
               </Link>
-            </li> */}
+            </li>
           </ul>
         </div>
 
