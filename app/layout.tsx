@@ -36,6 +36,16 @@ const RootLayout = (props: RootLayoutProps) => {
 
   return (
     <html lang="en" className={darkMode ? "dark transition-colors duration-100" : "transition-all duration-300"}>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+      />
       <body className="relative p-0 m-0 bg-white dark:bg-slate-900 dark:prose-invert prose prose-stone min-h-[65vh] max-w-full border-0 border-sky-400  h-full overflow-x-hidden">
         <ReadingProgressBar />
         <AppProgressBar height="1px" color="#ffca3c" options={{ showSpinner: true }} shallowRouting />

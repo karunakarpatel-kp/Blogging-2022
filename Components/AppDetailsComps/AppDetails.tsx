@@ -1,7 +1,9 @@
 "use client";
 
+import GooglePlayDynamicPageComponent from "app/(apps)/_pagesComponents/GooglePlayDynamicPageComponent";
 import axios from "axios";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 const AppDetails = () => {
@@ -54,17 +56,7 @@ const AppDetails = () => {
             </button>
           </div>
         </div>
-        {appData && (
-          <>
-            <h3>{appData.totalAppDetails.title}</h3>
-            <p>{appData.totalAppDetails.developer}</p>
-            <p>{appData.totalAppDetails.score}</p>
-            <p>{appData.totalAppDetails.description}</p>
-            <Image src={appData.totalAppDetails.screenshots[0]} alt={appData.title} width={500} height={250} />
-
-            <p>{appData.totalAppDetails.descriptionHTML}</p>
-          </>
-        )}
+        {appData && <GooglePlayDynamicPageComponent appData={appData} />}
       </section>
     </>
   );
