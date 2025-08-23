@@ -58,7 +58,6 @@ const GooglePlayDynamicPageComponent = (props: GooglePlayDynamicPageComponentPro
     developerLegalEmail,
   } = props.appData.totalAppDetails;
 
-  console.log(props.appData);
   return (
     <div>
       {/* Header */}

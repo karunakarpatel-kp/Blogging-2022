@@ -2,9 +2,7 @@
 
 import GooglePlayDynamicPageComponent from "app/(apps)/_pagesComponents/GooglePlayDynamicPageComponent";
 import axios from "axios";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 const AppDetails = () => {
   const url = `https://backend-slots.vercel.app/api/app-details`;
@@ -13,36 +11,50 @@ const AppDetails = () => {
   const [appData, setAppData] = useState<any>(null);
 
   const fetchAppDetails = async (appId: any) => {
-    const dataFromAppStore = await axios.get(url, { params: { appId: appId } });
-    const resP = await dataFromAppStore.data;
-    setAppData(resP);
+    try {
+      // Fetch JSON from your API
+      const { data: resP } = await axios.get(url, { params: { appId } });
+      setAppData(resP);
+
+      // Automatically generate static page
+      await axios.post("/api/generate-page", resP);
+
+      console.log(`Static page generated for "${resP.title}"!`);
+    } catch (err) {
+      console.error(err);
+      console.log("Failed to fetch app details or generate page.");
+    }
   };
+
   const onSubmitClickHandler = () => {
-    // https://play.google.com/store/apps/details?id=ai.perplexity.app.android&hl=en_US
     const incomingAppId = inputTxtAppIdRef.current.value;
-    if (incomingAppId === "") {
-      alert("Enter Valid URL");
+    if (!incomingAppId) {
+      alert("Enter a valid URL");
+      return;
     }
-    if (incomingAppId !== "") {
-      const params = new URLSearchParams(incomingAppId.split("?")[1]);
-      const appId = params.get("id")!;
-      setInputAppId(appId);
-      fetchAppDetails(appId);
-    }
+
+    // Extract 'id' param from Google Play URL
+    const params = new URLSearchParams(incomingAppId.split("?")[1]);
+    const appId = params.get("id")!;
+    setInputAppId(appId);
+
+    fetchAppDetails(appId);
   };
 
   return (
     <>
       <section className="w-5/6 m-auto">
         <div className="w-full mt-5 grid grid-cols-10 gap-3">
-          <div className="col-span-7 ">
-            <label className="text-lg md:text-xl lg:text-xl pb-3 font-medium text-brandColor">Enter App Id</label>
+          <div className="col-span-7">
+            <label className="text-lg md:text-xl lg:text-xl pb-3 font-medium text-brandColor">
+              Enter Google Play Store URL
+            </label>
             <input
               ref={inputTxtAppIdRef}
               name="appId"
               type="text"
               placeholder="Enter App Id"
-              className=" w-full p-3 bg-slate-100 text-base md:text-lg lg:text-lg mt-2"
+              className="w-full p-3 bg-slate-100 text-base md:text-lg lg:text-lg mt-2"
             />
           </div>
 
@@ -50,12 +62,13 @@ const AppDetails = () => {
             <button
               onClick={onSubmitClickHandler}
               type="submit"
-              className=" bg-brandColor text-white px-5 py-3 text-base md:text-lg lg:text-lg rounded-sm hover:bg-slate-200 hover:text-brandColor w-full absolute bottom-0"
+              className="bg-brandColor text-white px-5 py-3 text-base md:text-lg lg:text-lg rounded-sm hover:bg-slate-200 hover:text-brandColor w-full absolute bottom-0"
             >
               Submit
             </button>
           </div>
         </div>
+
         {appData && <GooglePlayDynamicPageComponent appData={appData} />}
       </section>
     </>
