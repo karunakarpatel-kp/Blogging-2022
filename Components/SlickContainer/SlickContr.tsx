@@ -15,7 +15,7 @@ interface SlickContainerProps {
 const SlickContr = (props: SlickContainerProps) => {
   const { headingTitle, autoPlay, infinite, slidesToShow, rows, slickObj } = props;
   return (
-    <div className="p-0 mt-6">
+    <div className="py-0 px-2 mt-6 ">
       <h2 className=" text-2xl font-semibold mb-0 pb-0">{headingTitle}</h2>
       <Slider
         autoplay={autoPlay}

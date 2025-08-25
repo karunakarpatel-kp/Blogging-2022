@@ -1,27 +1,76 @@
 import SlickContr from "Components/SlickContainer/SlickContr";
 import { url } from "inspector";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Page() {
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.karunakarpatel.com/apps/Artnight"),
+  title: "title",
+  description: "description",
+  verification: {
+    google: process.env.GOOGLE_ANALYTICS_TAG,
+  },
+  category: "category",
+  keywords: ["Karunakar Patel", "karunakarpatel", "coding", "nextjs"],
+  creator: "Karunakar Patel",
+  openGraph: {
+    title: "title",
+    description: "description",
+    type: "article",
+    publishedTime: "time",
+    modifiedTime: "time",
+    authors: ["Karunakar Patel"],
+    images: "img",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    site: "https://twitter.com/Karna_Patel_",
+    creator: "@Karna_Patel_",
+    creatorId: "https://twitter.com/Karna_Patel_",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+};
+
+const dynamicPageCreation = () => {
   return (
-    <div>
-      {/* Header */}
-      <header className="mt-9">
-        <div className="block w-full h-60 relative">
+    <>
+      <header className="-mt-3 ">
+        <div className="h-72  bg-slate-100 relative">
           <Image
-            className="w-full h-52 bg-cover bg-center"
+            className="w-full h-72 mt-20"
             alt="background-image"
-            fill
+            // fill
+            width={220}
+            height={120}
             src={
               "https://play-lh.googleusercontent.com/3B2aW4Nka4xiq35ywcD5b5Rqb6IJw0ffm_QFlHM_rV9ex7wKtb0ddFOX8LJPxkemb78"
             }
           />
         </div>
-
-        <div className=" mx-auto px-4 mt-10 relative z-10 bg-slate-100  w-11/12 rounded-sm">
+        <div className="mx-auto px-4   bg-slate-100 w-full md:w-11/12 lg:w-11/12 mt-2 rounded-sm ">
           <div className="grid grid-cols-12 gap-4">
-            <div className="col-span-1 ">
+            <div className="col-span-3 md:col-span-1 lg:col-span-1  ">
               <Image
                 src="https://play-lh.googleusercontent.com/D4DUUFQDCsH9NIEa8hjMjQSWdtNhGX1Fd_jT-23ogAb5uMMqttqQDUJcUt4K_u8RYOQ"
                 alt="icon"
@@ -30,21 +79,26 @@ export default function Page() {
                 className="w-24 h-26 rounded-2xl ring-4 ring-white shadow-xl object-cover"
               />
             </div>
-
-            <div className="col-span-7 pl-5">
-              <h1 className="text-3xl font-semibold p-0 m-0">Arknights</h1>
-              <p className="text-slate-600 text-lg py-3 m-0">Yostar Limited.</p>
-              <div className="flex gap-2 mt-2">
-                <span className="border rounded-full px-5 py-2 text-base bg-white">⭐ 4.4</span>
-                <span className="pborder rounded-full px-5 py-2 text-base bg-white">5,000,000+ installs</span>
-                <span className="pborder rounded-full px-5 py-2 text-base bg-white">Strategy</span>
+            <div className="col-span-4 md:col-span-7 lg:col-span-7 pl-5">
+              <h1 className="text-2xl md:text-3xl lg:text-3xl font-semibold p-0 mt-4">Arknights</h1>
+              <p className="text-slate-600 text-base md:text-lg lg:text-lg py-0 m-0">Yostar Limited.</p>
+              <div className="gap-2 mt-2 hidden md:flex lg:flex">
+                <span className="border rounded-full px-8 md:px-5 py-1 md:py-2 text-xs md:text-base bg-white">
+                  ⭐ 4.4
+                </span>
+                <span className="border rounded-full px-8 md:px-5 py-1 md:py-2 text-xs md:text-base bg-white">
+                  5,000,000+ installs
+                </span>
+                <span className="border rounded-full px-8 md:px-5 py-1 md:py-2 text-xs md:text-base bg-white">
+                  Strategy
+                </span>
               </div>
             </div>
-            <div className="ml-auto pb-2 col-span-3 my-auto">
+            <div className="ml-auto pb-2 col-span-5 md:col-span-3 lg:col-span-3 my-auto">
               <Link
                 href="https://play.google.com/store/apps/details?id=com.YoStarEN.Arknights&hl=en&gl=us"
                 target="_blank"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brandColor text-white shadow hover:opacity-90 transition underline-offset-4"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brandColor text-white shadow hover:opacity-90 transition underline-offset-4 text-xs md:text-lg lg:text-xl"
               >
                 View on Play Store
                 <svg
@@ -61,11 +115,10 @@ export default function Page() {
           </div>
         </div>
       </header>
-
       {/* Main content */}
-      <main className="mx-auto py-3 grid lg:grid-cols-3 gap-8 w-11/12 ">
+      <main className="mx-auto  grid grid-cols-12 gap-4 w-11/12 mt-2 ">
         {/* Left Column */}
-        <section className="lg:col-span-2 space-y-8">
+        <section className="col-span-12 md:col-span-8 lg:col-span-8 space-y-8">
           {/* About */}
           <div className="px-6 py-6 pt-2  bg-slate-50  shadow-sm">
             <h2 className="text-xl font-bold mb-3">About</h2>
@@ -84,6 +137,24 @@ export default function Page() {
                 <li>Hundreds of unique Operators across a variety of classes open up countless gameplay options</li>
                 <li>Hundreds of unique Operators across a variety of classes open up countless gameplay options</li>
               </ol>
+              <p>
+                Take on the role of a key member of Rhodes Island, a pharmaceutical company that fights both a deadly
+                infection and the unrest it leaves in its wake. Together with your leader Amiya, you'll recruit
+                Operators, train them, then assign them to various operations to protect the innocent and resist those
+                who would thrust the world into turmoil.
+              </p>
+              <p>
+                Take on the role of a key member of Rhodes Island, a pharmaceutical company that fights both a deadly
+                infection and the unrest it leaves in its wake. Together with your leader Amiya, you'll recruit
+                Operators, train them, then assign them to various operations to protect the innocent and resist those
+                who would thrust the world into turmoil.
+              </p>
+              <p>
+                Take on the role of a key member of Rhodes Island, a pharmaceutical company that fights both a deadly
+                infection and the unrest it leaves in its wake. Together with your leader Amiya, you'll recruit
+                Operators, train them, then assign them to various operations to protect the innocent and resist those
+                who would thrust the world into turmoil.
+              </p>
             </div>
           </div>
 
@@ -108,13 +179,12 @@ export default function Page() {
 
           {/* Trailer */}
           <div className="space-y-4">
-            <h2 className="text-xl font-bold">Trailer</h2>
+            <h2 className="text-xl font-bold">Arknight Trailer</h2>
             <div className="aspect-video rounded-2xl overflow-hidden shadow border border-slate-200">
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/TRDsdsi20Ac?ps=play&vq=large&rel=0&autohide=1&showinfo=0&start=15"
                 title="Trailer"
-                frameBorder="0"
                 allowFullScreen
               />
             </div>
@@ -122,10 +192,10 @@ export default function Page() {
         </section>
 
         {/* Right Column */}
-        <aside className="space-y-6">
+        <aside className="col-span-12 md:col-span-4 lg:col-span-4 space-y-6">
           {/* Meta */}
-          <div className=" p-6  bg-slate-50  shadow-sm">
-            <h3 className="text-lg font-semibold mb-3 text-center underline underline-offset-4">At a glance</h3>
+          <div className=" py-2 px-6 bg-slate-50  shadow-sm">
+            <h3 className="text-lg font-semibold mb-3 text-center underline underline-offset-4 ">About the Game</h3>
             <dl className="grid grid-cols-2 gap-y-2 text-base">
               <dt className="text-slate-700">Rating</dt>
               <dd className="font-medium">4.4</dd>
@@ -167,8 +237,8 @@ export default function Page() {
           </div>
         </aside>
       </main>
-
-      <footer className="max-w-6xl mx-auto px-4 pb-10 text-sm text-slate-500">Generated with Tailwind CSS (CDN)</footer>
-    </div>
+    </>
   );
-}
+};
+
+export default dynamicPageCreation;
