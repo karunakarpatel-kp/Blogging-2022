@@ -168,11 +168,8 @@ const Navigation = (props: NavigationProps) => {
               </Link>
             </li>
             <li>
-              <Link
-                href="/apps/sample"
-                className="text-white text-xl underline-offset-4 font-normal decoration-slate-300"
-              >
-                Sample
+              <Link href="/games" className="text-white text-xl underline-offset-4 font-normal decoration-slate-300">
+                Games
               </Link>
             </li>
           </ul>
