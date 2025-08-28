@@ -66,7 +66,7 @@ export default function Page() {
               </p>
 
               <p>
-                Whether you're typing emails on the go, editing an important LinkedIn post, sending a text message, or
+                Whether youre typing emails on the go, editing an important LinkedIn post, sending a text message, or
                 composing an essential tweet, the Grammarly writing assistant and grammar checker lets you spell check,
                 correct, edit and perfect your message from your mobile device with confidence. Leveraging the power of
                 generative AI, Grammarly allows you to easily rewrite your messages by composing new versions for you to
@@ -75,16 +75,16 @@ export default function Page() {
 
               <p>
                 Simply select the rewrite option that makes your writing more descriptive, confident, formal - and much
-                more! Grammarly works with any Android keyboard, such as Gboard or SwiftKey, so you’ll never have to
+                more! Grammarly works with any Android keyboard, such as Gboard or SwiftKey, so youll never have to
                 switch keyboards when you need help writing that important email, text, or social post. Edit, spell
-                check, and correct your writing in real time – Grammar checker: Know your grammar is always
-                mistake-free. – Spelling checker and proofreader: Easily avoid common typos. – Advanced punctuation
-                correction: Take the guesswork out of punctuation.
+                check, and correct your writing in real time Grammar checker: Know your grammar is always mistake-free.
+                Spelling checker and proofreader: Easily avoid common typos. Advanced punctuation correction: Take the
+                guesswork out of punctuation.
               </p>
 
               <p>
-                Writing assistant and proofreader: Improve your communication skills – Receive short, clear explanations
-                for every correction. – Understand your mistakes and avoid them in the future. Improve your writing
+                Writing assistant and proofreader: Improve your communication skills Receive short, clear explanations
+                for every correction. Understand your mistakes and avoid them in the future. Improve your writing
                 through GenAI - Select your text and click “improve it” to see GenAI-created new versions - Choose
                 versions to shorten, add more description, sound more confident, and more! *** Uplevel Your
                 Communication Skills With Premium *** Take your writing and communication skills from good to great with
@@ -97,13 +97,13 @@ export default function Page() {
                 deactivation of the Grammarly Keyboard for Android, please refer to this article:
                 https://support.grammarly.com/hc/en-us/articles/25038364027661--The-Grammarly-Keyboard-for-Android-will-be-discontinued
                 Grammarly always keeps your writing safe and private. See our User Trust Guidelines for details:
-                https://www.grammarly.com/trust By installing Grammarly’s mobile app, you agree to Grammarly’s Terms and
-                Conditions (www.grammarly.com/terms) and acknowledge that you have read Grammarly’s Privacy Policy
+                https://www.grammarly.com/trust By installing Grammarly mobile app, you agree to Grammarlys Terms and
+                Conditions (www.grammarly.com/terms) and acknowledge that you have read Grammarlys Privacy Policy
                 (https://www.grammarly.com/privacy-policy). California residents, please see the California Privacy
                 Notice (https://www.grammarly.com/privacy-policy#for-california-users). With your consent, Grammarly may
                 collect data about app usage and device type. Accessibility permission is used to process text written
                 in apps and provide you with tailored writing assistance. We also use this permission to turn Grammarly
-                on when you’re typing in apps.
+                on when youre typing in apps.
               </p>
             </div>
           </div>

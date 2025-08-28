@@ -25,12 +25,12 @@ const AppDetailsaArticle = () => {
       <p>
         Before getting, there are two ways in which we can install Next.js, one is theautomatic Installation and the
         other is manual Installation. Both work in the same way. The automatic installation will complete all the setup
-        by one single command whereas less manual installation will complete by two to three commands. It's up to you
+        by one single command whereas less manual installation will complete by two to three commands. Its up to you
         which installation method you choose, either way in this article I will explain both ways of installation
         methods.
       </p>
 
-      <p>Let's dig into Automatic Installation of Next.js</p>
+      <p>Lets dig into Automatic Installation of Next.js</p>
       <h2>2. Install Next.js</h2>
 
       <p>
@@ -47,12 +47,12 @@ const AppDetailsaArticle = () => {
       <p>
         Before getting, there are two ways in which we can install Next.js, one is theautomatic Installation and the
         other is manual Installation. Both work in the same way. The automatic installation will complete all the setup
-        by one single command whereas less manual installation will complete by two to three commands. It's up to you
+        by one single command whereas less manual installation will complete by two to three commands. Its up to you
         which installation method you choose, either way in this article I will explain both ways of installation
         methods.
       </p>
 
-      <p>Let's dig into Automatic Installation of Next.js</p>
+      <p>Lets dig into Automatic Installation of Next.js</p>
       <h2>2. Install Next.js</h2>
 
       <p>
@@ -69,12 +69,12 @@ const AppDetailsaArticle = () => {
       <p>
         Before getting, there are two ways in which we can install Next.js, one is theautomatic Installation and the
         other is manual Installation. Both work in the same way. The automatic installation will complete all the setup
-        by one single command whereas less manual installation will complete by two to three commands. It's up to you
+        by one single command whereas less manual installation will complete by two to three commands. Its up to you
         which installation method you choose, either way in this article I will explain both ways of installation
         methods.
       </p>
 
-      <p>Let's dig into Automatic Installation of Next.js</p>
+      <p>Lets dig into Automatic Installation of Next.js</p>
     </article>
   );
 };
