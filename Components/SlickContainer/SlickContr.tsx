@@ -15,7 +15,7 @@ interface SlickContainerProps {
 const SlickContr = (props: SlickContainerProps) => {
   const { headingTitle, autoPlay, infinite, slidesToShow, rows, slickObj } = props;
   return (
-    <div className="py-0 px-2 mt-6 ">
+    <div className="py-0 px-2 mt-0 slide-container">
       <h2 className=" text-2xl font-semibold mb-0 pb-0">{headingTitle}</h2>
       <Slider
         autoplay={autoPlay}
@@ -26,19 +26,17 @@ const SlickContr = (props: SlickContainerProps) => {
         className=""
       >
         {slickObj &&
-          slickObj.map((singleItem) => {
+          slickObj.map((singleItem, index) => {
             return (
-              <>
-                <div className="px-2 relative">
-                  <Image
-                    src={singleItem}
-                    alt={`${headingTitle} game screenshot`}
-                    width={600}
-                    height={550}
-                    className="w-full object-cover rounded-xl shadow"
-                  />
-                </div>
-              </>
+              <div className="px-2 relative" key={index}>
+                <Image
+                  src={singleItem}
+                  alt={`${headingTitle} game screenshot`}
+                  width={600}
+                  height={550}
+                  className="w-full object-cover rounded-xl shadow"
+                />
+              </div>
             );
           })}
       </Slider>

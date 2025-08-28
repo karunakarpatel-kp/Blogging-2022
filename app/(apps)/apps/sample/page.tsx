@@ -1,36 +1,17 @@
 import SlickContr from "Components/SlickContainer/SlickContr";
-import { url } from "inspector";
 import { Metadata } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.karunakarpatel.com/apps/Artnight"),
-  title: "title",
-  description: "description",
-  verification: {
-    google: process.env.GOOGLE_ANALYTICS_TAG,
-  },
-  category: "category",
-  keywords: ["Karunakar Patel", "karunakarpatel", "coding", "nextjs"],
-  creator: "Karunakar Patel",
-  openGraph: {
-    title: "title",
-    description: "description",
-    type: "article",
-    publishedTime: "time",
-    modifiedTime: "time",
-    authors: ["Karunakar Patel"],
-    images: "img",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    site: "https://twitter.com/Karna_Patel_",
-    creator: "@Karna_Patel_",
-    creatorId: "https://twitter.com/Karna_Patel_",
-  },
-
+  metadataBase: new URL("https://www.karunakarpatel.com/"),
+  title: "My Next.js App in the ttitle bar",
+  description: "A modern web application built with Next.js.",
+  keywords: ["Next.js", "Web App", "JavaScript", "React", "Frontend"],
+  category: "apps",
+  creator: "karunakar patel",
+  authors: [{ name: "Your Name" }],
   robots: {
     index: true,
     follow: true,
@@ -45,10 +26,31 @@ export const metadata: Metadata = {
     },
   },
 
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
+  openGraph: {
+    title: "My Next.js App",
+    description: "A modern web application built with Next.js.",
+    url: "https://yourdomain.com",
+    siteName: "My Next.js App",
+    images: [
+      {
+        url: "https://yourdomain.com/og-image.jpg", // Replace with your image
+        width: 1200,
+        height: 630,
+        alt: "My Next.js App",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "My Next.js App",
+    description: "A modern web application built with Next.js.",
+    images: ["https://yourdomain.com/og-image.jpg"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -157,9 +159,8 @@ const dynamicPageCreation = () => {
               </p>
             </div>
           </div>
-
           {/* Screenshots */}
-          <div className="space-y-4">
+          <div className="space-y-4 m-0 p-0 ">
             <SlickContr
               autoPlay={true}
               headingTitle="Screenshots"
