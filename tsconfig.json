@@ -39,7 +39,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/Blog/(markdown)/reduce-image-size-in-kb/page.mdx",
-    "app/api/google-play-scraper/route.js"
+    "app/api/google-play-scraper/route.js",
+    "app/(apps)/apps/generateAppRoutes.js"
   ],
   "exclude": ["node_modules"]
 }

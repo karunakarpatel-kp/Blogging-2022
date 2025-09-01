@@ -2,6 +2,13 @@ import fs from "fs";
 import path from "path";
 import { NextRequest, NextResponse } from "next/server";
 
+function getSeoDescription(text: string, maxLength = 160): string {
+  if (!text) return "";
+  if (text.length <= maxLength) return text;
+  const trimmed = text.slice(0, maxLength);
+  return trimmed.slice(0, trimmed.lastIndexOf(" ")) + "...";
+}
+
 export async function POST(req: NextRequest) {
   try {
     // Get the JSON data from request body
@@ -12,6 +19,8 @@ export async function POST(req: NextRequest) {
 
     const filePath = path.join(folderPath, "page.tsx");
 
+    const seoDescription = getSeoDescription(app.totalAppDetails.description);
+
     const dynamicContent = `
 import SlickContr from "Components/SlickContainer/SlickContr";
 import { Metadata } from "next";
@@ -21,7 +30,7 @@ import React from "react";
 
 export const metadata: Metadata = {
   title: "${app.totalAppDetails.title}",
-  description: "Description goes here",
+   description: "${seoDescription}",
   keywords: ['${app.totalAppDetails.genre}',' ${app.totalAppDetails.title}', '${
       app.totalAppDetails.developer
     }', 'karunakar patel'],
@@ -42,7 +51,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: '${app.totalAppDetails.title}',
-    description: 'description goes here...!',
+    description: "${seoDescription}",
     url:  "${folderPath}",
     siteName: 'Play out the game of ${app.totalAppDetails.title}',
     images: [
@@ -59,7 +68,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "${app.totalAppDetails.title}",
-    description: "Description goes here...!",
+    description: "${seoDescription}",
     images: ["${app.totalAppDetails.headerImage}"],
   },
   icons: {
@@ -73,13 +82,13 @@ const page = () => {
   return (
     <>
     <header className="-mt-3 ">
-        <div className="h-72  bg-slate-100 relative">
+        <div className="h-96  bg-slate-100 relative">
           <Image
-            className="w-full h-72 mt-20"
+            className="w-full h-96 mt-20"
             alt="background-image"
             // fill
-            width={220}
-            height={120}
+            width={920}
+            height={820}
             src={
             "${app.totalAppDetails.headerImage}"
             }
@@ -92,7 +101,7 @@ const page = () => {
               src={"${app.totalAppDetails.icon}"}
                 width={96}
                 height={125}
-                alt='alt'
+                alt='icon'
                 className="w-24 h-26 rounded-2xl ring-4 ring-white shadow-xl object-cover"
               />
             </div>
@@ -142,7 +151,7 @@ const page = () => {
           <div className="px-6 py-6 pt-2  bg-slate-50  shadow-sm">
             <h2 className="text-xl font-bold mb-3">About</h2>
              <div
-              className="prose prose-slate max-w-none"
+              className="prose prose-slate prose-lg max-w-none"
               dangerouslySetInnerHTML={{
                 __html:
                   "${app.totalAppDetails.descriptionHTML}"

@@ -157,6 +157,18 @@ interface Blog_Post_URL_Props {
 
   DISCLAIMER_PAGE_ABSOLUTE: string;
   DISCLAIMER_PAGE_RELATIVE: string;
+
+  TOOLS_PAGE_ABSOLUTE: string;
+  TOOLS_PAGE_RELATIVE: string;
+
+  APPS_PAGE_ABSOLUTE: string;
+  APPS_PAGE_RELATIVE: string;
+
+  GAMES_PAGE_ABSOLUTE: string;
+  GAMES_PAGE_RELATIVE: string;
+
+  APP_DETAILS_PAGE_ABSOLUTE: string;
+  APP_DETAILS_PAGE_RELATIVE: string;
 }
 
 export const blogPostURLS: Blog_Post_URL_Props = {
@@ -174,6 +186,18 @@ export const blogPostURLS: Blog_Post_URL_Props = {
 
   DISCLAIMER_PAGE_ABSOLUTE: `${BASE_URLS.HOME_PAGE_BASE_URL}/disclaimer`,
   DISCLAIMER_PAGE_RELATIVE: "/disclaimer",
+
+  TOOLS_PAGE_ABSOLUTE: `${BASE_URLS.HOME_PAGE_BASE_URL}/tools`,
+  TOOLS_PAGE_RELATIVE: "/tools",
+
+  APPS_PAGE_ABSOLUTE: `${BASE_URLS.HOME_PAGE_BASE_URL}/apps`,
+  APPS_PAGE_RELATIVE: "/apps",
+
+  GAMES_PAGE_ABSOLUTE: `${BASE_URLS.HOME_PAGE_BASE_URL}/games`,
+  GAMES_PAGE_RELATIVE: "/games",
+
+  APP_DETAILS_PAGE_ABSOLUTE: `${BASE_URLS.HOME_PAGE_BASE_URL}/tools/app-details`,
+  APP_DETAILS_PAGE_RELATIVE: "/tools/app-details",
 
   NEXTJS_INSTALLATION_ABSOLUTE: `${BASE_URLS.BLOG_PAGE_BASE_URL}/nextjs_installation`,
   NEXTJS_INSTALLATION_RELATIVE: "/Blog/nextjs_installation",
@@ -355,6 +379,92 @@ export const SEO_OBJ: SEO_OBJ_Props = {
     ogImageURL: `${BASE_URLS.HOME_PAGE_BASE_URL}/welcome-page.png`,
     changeFrequency: "daily",
     tags: [{ tag: "disclaimer", href: "/disclaimer" }],
+  },
+
+  TOOLS_PAGE: {
+    absoluteURL: blogPostURLS.TOOLS_PAGE_ABSOLUTE,
+    relativeURL: blogPostURLS.TOOLS_PAGE_RELATIVE,
+    title: "Free Tools - Karunakar Patel",
+    description: "Use this free tools to in your blog for free of cost. Please visit or bookmark this tools page.",
+    lastUpdateTime: `${dynamicLastUpdatedTime()}`,
+    publishedTime: "2025-09-20T01:19:55+00:00",
+    featuredImage: welcomePatelsImage,
+    featuredImageAltText: "a-person-with-computer",
+    ogImageURL: `${BASE_URLS.HOME_PAGE_BASE_URL}/welcome-page.png`,
+    changeFrequency: "daily",
+    tags: [{ tag: "tools", href: "/tools" }],
+  },
+
+  APPS_PAGE: {
+    absoluteURL: blogPostURLS.APPS_PAGE_ABSOLUTE,
+    relativeURL: blogPostURLS.APPS_PAGE_RELATIVE,
+    title: "Trending Apps - Karunakar Patel",
+    description:
+      "Checkout the latest app releases and trending apps in the playstore. You can find all the details about the popular apps and their latest releases.",
+    lastUpdateTime: `${dynamicLastUpdatedTime()}`,
+    publishedTime: "2025-09-20T01:19:55+00:00",
+    featuredImage: welcomePatelsImage,
+    featuredImageAltText: "a-person-with-computer",
+    ogImageURL: `${BASE_URLS.HOME_PAGE_BASE_URL}/welcome-page.png`,
+    changeFrequency: "daily",
+    tags: [{ tag: "tools", href: "/tools" }],
+  },
+
+  GAMES_PAGE: {
+    absoluteURL: blogPostURLS.GAMES_PAGE_ABSOLUTE,
+    relativeURL: blogPostURLS.GAMES_PAGE_RELATIVE,
+    title: "Free Game Apps - Karunakar Patel",
+    description:
+      "Checkout the latest games and online game app releases and trending apps in the playstore. You can find all the details about the popular apps and their latest releases.",
+    lastUpdateTime: `${dynamicLastUpdatedTime()}`,
+    publishedTime: "2025-09-20T01:19:55+00:00",
+    featuredImage: welcomePatelsImage,
+    featuredImageAltText: "a-person-with-computer",
+    ogImageURL: `${BASE_URLS.HOME_PAGE_BASE_URL}/welcome-page.png`,
+    changeFrequency: "daily",
+    tags: [{ tag: "games", href: "/games" }],
+  },
+
+  APP_DETAILS_PAGE: {
+    absoluteURL: blogPostURLS.APP_DETAILS_PAGE_ABSOLUTE,
+    relativeURL: blogPostURLS.APP_DETAILS_PAGE_RELATIVE,
+    title: "Get App Details Tool - Karunakar Patel",
+    description:
+      "Checkout the get app details tool from me. By using this tool, you can able to pull out the google play store app details dynamically. Please use this tool for free of cost and feel free to contact me",
+    lastUpdateTime: `${dynamicLastUpdatedTime()}`,
+    publishedTime: "2025-09-20T01:19:55+00:00",
+    featuredImage: welcomePatelsImage,
+    featuredImageAltText: "a-person-with-computer",
+    ogImageURL: `${BASE_URLS.HOME_PAGE_BASE_URL}/welcome-page.png`,
+    changeFrequency: "daily",
+    tags: [{ tag: "games", href: "/games" }],
+  },
+
+  LUDO_KING: {
+    absoluteURL: "https://www.karunakarpatel.com/games/Ludo-King",
+    relativeURL: "/games/Ludo-King",
+    title: "",
+    description: "",
+    lastUpdateTime: `${dynamicLastUpdatedTime()}`,
+    publishedTime: "",
+    featuredImage: welcomePatelsImage,
+    featuredImageAltText: "a-person-with-computer",
+    ogImageURL: `${BASE_URLS.HOME_PAGE_BASE_URL}/welcome-page.png`,
+    changeFrequency: "daily",
+    tags: [{ tag: "games", href: "/games" }],
+  },
+  UTS: {
+    absoluteURL: "https://www.karunakarpatel.com/apps/UTS",
+    relativeURL: "/apps/UTS",
+    title: "",
+    description: "",
+    lastUpdateTime: `${dynamicLastUpdatedTime()}`,
+    publishedTime: "",
+    featuredImage: welcomePatelsImage,
+    featuredImageAltText: "a-person-with-computer",
+    ogImageURL: `${BASE_URLS.HOME_PAGE_BASE_URL}/welcome-page.png`,
+    changeFrequency: "daily",
+    tags: [{ tag: "games", href: "/games" }],
   },
 
   // nextjs_installation

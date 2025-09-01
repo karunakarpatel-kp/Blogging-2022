@@ -1,6 +1,10 @@
 import React from "react";
 import AppDetails from "Components/AppDetailsComps/AppDetails";
 import AppDetailsaArticle from "Components/AppDetailsComps/AppDetailsaArticle";
+import { CustomMetaData } from "Components/MetaData/CustomMetaData";
+import { SEO_OBJ } from "Essential";
+
+export const metadata: any = CustomMetaData({ presentURL: SEO_OBJ.APP_DETAILS_PAGE.absoluteURL });
 
 const AppDetailsPage = () => {
   return (

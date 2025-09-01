@@ -2,6 +2,10 @@ import React from "react";
 import sampleImage from "@Public/coding.jpg";
 import Image from "next/image";
 import Link from "next/link";
+import { CustomMetaData } from "Components/MetaData/CustomMetaData";
+import { SEO_OBJ } from "Essential";
+
+export const metadata: any = CustomMetaData({ presentURL: SEO_OBJ.TOOLS_PAGE.absoluteURL });
 
 const ToolsPage = () => {
   return (

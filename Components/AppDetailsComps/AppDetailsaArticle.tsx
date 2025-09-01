@@ -2,79 +2,75 @@ import React from "react";
 
 const AppDetailsaArticle = () => {
   return (
-    <article className="border-0 border-red-800 px-10 mt-16 prose prose-lg m-auto !max-w-none w-[88%]   ">
-      <h1>Next.js Installation: Everything You Need to Know to Get Started</h1>
+    <article className="border-0 border-red-800 px-10 mt-16 prose prose-lg m-auto !max-w-none w-[88%]  ">
+      <h1>Get App Details from Google Play Store: How to Pull Raw Data Easily</h1>
       <p>
-        Hi, in this article you will learn how to install the next.js react framework in a step-by-step manner. In the
-        evolving landscape of web development, staying ahead of the software curve is essential. No matter what, whether
-        you are a seasoned or aspiring coder, Next.js is the name that you should become intimately familiar with.
-      </p>
-      <h2>2. Install Next.js</h2>
-
-      <p>
-        To install Next.js, you need to have Node.js installed on your local machine. Make sure that you have the latest
-        LTS version of node.js. To check the version of node.js just type node -v in your terminal and compare the
-        version with the LTS version listed on the Node.js official website.
+        In todays fast-paced mobile app ecosystem, having access to accurate app data is crucial for developers,
+        marketers, and analysts. Whether youre analyzing competitors, tracking downloads, or checking app updates,
+        getting raw app data directly from the Google Play Store can save a lot of time and effort.
       </p>
 
       <p>
-        After installing node.js, you will have the npm command available in the command line, where we use npm to
-        install all the required libraries.
+        Thats where the <strong>“Get App Details” tool</strong> comes in.
       </p>
 
+      <h2>What Is the Get App Details Tool?</h2>
       <p>
-        Before getting, there are two ways in which we can install Next.js, one is theautomatic Installation and the
-        other is manual Installation. Both work in the same way. The automatic installation will complete all the setup
-        by one single command whereas less manual installation will complete by two to three commands. Its up to you
-        which installation method you choose, either way in this article I will explain both ways of installation
-        methods.
+        The <strong>Get App Details tool</strong> allows you to{" "}
+        <strong>pull raw data from the Google Play Store</strong> quickly and efficiently. By simply passing the apps ID
+        as a query string in the URL, you can extract important information such as:
       </p>
+      <ul>
+        <li>App name and developer</li>
+        <li>Description and category</li>
+        <li>Ratings and reviews</li>
+        <li>Installs and update history</li>
+        <li>Version and content rating</li>
+        <li>App images, screenshots, and videos</li>
+      </ul>
+      <p>All this data can then be used for analysis, reporting, or even feeding your own dashboards.</p>
 
-      <p>Lets dig into Automatic Installation of Next.js</p>
-      <h2>2. Install Next.js</h2>
-
+      <h2>How to Use the Tool</h2>
       <p>
-        To install Next.js, you need to have Node.js installed on your local machine. Make sure that you have the latest
-        LTS version of node.js. To check the version of node.js just type node -v in your terminal and compare the
-        version with the LTS version listed on the Node.js official website.
+        Copy the google play store url and paste it in the text box and click submit. The data will be fetched
+        automatically
       </p>
-
       <p>
-        After installing node.js, you will have the npm command available in the command line, where we use npm to
-        install all the required libraries.
+        The tool will return structured JSON or another format containing all the details about the app. You can then
+        parse this data for your own purposes.
       </p>
 
+      <h2>Why Use This Tool?</h2>
+      <ul>
+        <li>
+          <strong>Save Time:</strong> No need to manually scrape data from each app page.
+        </li>
+        <li>
+          <strong>Accurate Data:</strong> Pulls data directly from Google Play Store, so its reliable.
+        </li>
+        <li>
+          <strong>Integrates Easily:</strong> Works with dashboards, analytics tools, or even your own applications.
+        </li>
+        <li>
+          <strong>Ideal for Analysis:</strong> Track trends, compare apps, or monitor competitors.
+        </li>
+      </ul>
+
+      <h2>Documentation and Support</h2>
       <p>
-        Before getting, there are two ways in which we can install Next.js, one is theautomatic Installation and the
-        other is manual Installation. Both work in the same way. The automatic installation will complete all the setup
-        by one single command whereas less manual installation will complete by two to three commands. Its up to you
-        which installation method you choose, either way in this article I will explain both ways of installation
-        methods.
+        To get started, check out the detailed{" "}
+        <a href="https://www.karunakarpatel.com/tools/app-details">documentation</a> on how to use the Get App Details
+        tool. The documentation provides examples, parameters, and tips to make the most out of the tool.
       </p>
+      <p>For any questions, support is available directly through the app details page.</p>
 
-      <p>Lets dig into Automatic Installation of Next.js</p>
-      <h2>2. Install Next.js</h2>
-
+      <h2>Conclusion</h2>
       <p>
-        To install Next.js, you need to have Node.js installed on your local machine. Make sure that you have the latest
-        LTS version of node.js. To check the version of node.js just type node -v in your terminal and compare the
-        version with the LTS version listed on the Node.js official website.
+        Whether youre a developer, analyst, or marketer, the <strong>Get App Details tool</strong> is a simple and
+        powerful way to access Google Play Store app data. By just using an App ID, you can retrieve raw app details and
+        use them for analysis, reporting, or integration in your own tools.
       </p>
-
-      <p>
-        After installing node.js, you will have the npm command available in the command line, where we use npm to
-        install all the required libraries.
-      </p>
-
-      <p>
-        Before getting, there are two ways in which we can install Next.js, one is theautomatic Installation and the
-        other is manual Installation. Both work in the same way. The automatic installation will complete all the setup
-        by one single command whereas less manual installation will complete by two to three commands. Its up to you
-        which installation method you choose, either way in this article I will explain both ways of installation
-        methods.
-      </p>
-
-      <p>Lets dig into Automatic Installation of Next.js</p>
+      <p className="mb-10">Start using it today and save hours of manual work!</p>
     </article>
   );
 };
