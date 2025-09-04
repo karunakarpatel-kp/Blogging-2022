@@ -131,8 +131,90 @@ const page = () => {
             <div
               className="prose prose-slate prose-lg max-w-none"
               dangerouslySetInnerHTML={{
-                __html:
-                  "<strong>THIS IS OFFICIAL LUDO KING® GAME</strong><br><br>1.5 Billion Downloads!<br><br>Voice chat available.<br><br>Ludo King® is board game played between friends, family &amp; kids. <br>* 2/3/4/5/6 Players online Ludo game mode available<br>* 2/3/4 Players Snakes and Ladders game mode available<br>* 8 Players tournament available<br>* New Ludo season released each month<br>* Play daily goals and get free dice, coins and diamonds<br><br>Ludo King® is a classic board game played between friends and family. Play the dice game of kings! Recall your childhood! In some places, Ludo is also known as Parchisi, Pachisi, parcheesi or Parchisi game.<br><br>Ludo King is a cross platform multiplayer game that supports Desktop, Android, iOS, HTML5 and Windows mobile platform at same time. This game also support offline mode, where player can play with Computer or, Local multiplayer (pass and play mode). Play this dice game Ludo King. Best casual game in board games.<br><br>New Game Themes available:<br>Disco / Night mode Theme<br>Nature Theme<br>Egypt Theme<br>Pinball Theme<br>Candy Theme<br>Christmas Theme<br>Penguin Theme<br>Battle Theme<br>Diwali Theme<br>Pirate Theme<br>Sui Dhaaga Theme<br>Marble Theme<br>Alien Theme<br>Octopus Theme<br>Taj Mahal Theme<br><br>What&#39;s new:<br>* Social chat (text and voice)<br>* Search- Worldwide players search<br>* Past played players history available<br>* Quick mode<br>* Tournament available<br>* Voice Chat available<br>* Real chat with friends and buddies<br>* Challenge Facebook friends/buddies<br>* Save/Load Ludo game option<br>* More user-friendly UI<br>* Low end devices support<br><br>Ludo King is the modern version of the royal game of Pachisi. A Ludo game which was played between Indian kings and queens in ancient times. Roll the Ludo dice and move your tokens to reach the center of the Ludo board. Beat other players, become the Ludo King.<br><br>Ludo King follows the traditional rules and the old school look of the Ludo game. Just like the kings and queens of India&#39;s golden age, your fate depends on the roll of the Ludo&#39;s dice and your strategy of moving the tokens effectively. <br><br>Features of Ludo King:<br>* No internet connection required! Play against the computer<br>* Play with your family and friends through Local and Online Multiplayer<br>* Play 2 to 6 Player Local Multiplayer Mode<br>* Invite and challenge your Facebook Friends in a private game room and beat them to become Ludo King<br>* Private chat with your Facebook friends &amp; Buddies<br>* Play Snake and Ladders on 7 different game board variations<br><br>Ludo King is a friends and family game that was once played by kings and now it can be enjoyed by you and your family and friends. You&#39;ll be playing this Ludo for hours and its fun for the whole family.<br><br>Ludo King is a perfect time pass game of Ludo board game. You played Ludo in your childhood, now play on your phone and tablet.<br><br>Another nostalgic game similar in structure is Snakes and Ladders. Like Ludo, you may have played this board game when you were young. Ludo King now incorporates this classic Snakes and Ladders game as a whole new level. The objective of the game is simple: you have to be the first one to make it to 100. However, you can only move the same number of tiles as the number you roll on a die. If you land on the same tile as the beginning of a ladder, then you can take the ladder as a shortcut and move on up. A game of ups and down, Snakes and Ladders has been a favorite for generations; and now you can play it too, with Ludo King. <br><br>Ludo has different names in different regions and countries like Fia, Fia-spel (Fia the game), Le Jeu de Dada (The Game of Dada), Non t&#39;arrabbiare, Fia med knuff (Fia with push), Cờ cá ngựa, Uckers, Griniaris, Petits Chevaux (Little Horses), Ki nevet a végén, برسي (Barjis/Barjees). People also misspell Ludo as Loodo, Chakka, Lido, Lado, Ledo, Leedo, Laado, or Lodo.<br><br>Follow us to get news and updates:<br>* Facebook: https://www.facebook.com/ludokinggame<br>* Twitter: https://twitter.com/LudoKingGame<br>* YouTube: https://www.youtube.com/c/LudoKing<br>* Instagram: https://www.instagram.com/ludokinggame/<br>* https://ludoking.com",
+                __html: `
+      <h1>Ludo King® – Play the Classic Board Game on Your Phone!</h1>
+      <p>Hello there! 👋 Do you like playing games with your friends and family? Guess what! There’s a super fun game called <strong>Ludo King®</strong>, and now you can play it right on your phone or tablet. You don’t need a board, dice, or tokens, everything is digital! 🎲</p>
+      <p>Ludo King® is the modern version of the classic game of <strong>Ludo</strong> that kings and queens used to play a long time ago in India. It’s a fun game where you roll dice, move your tokens, and try to reach the center of the board before your friends. 🏆</p>
+
+      <h2>Amazing Facts About Ludo King®</h2>
+      <ul>
+        <li>Over <strong>1.5 billion downloads</strong> worldwide! 🌏</li>
+        <li>You can <strong>talk to friends while playing</strong> using voice chat 🎤</li>
+        <li>Play with your <strong>family, friends, or even kids</strong></li>
+        <li>Play <strong>2 to 6 players online</strong> or enjoy <strong>offline mode</strong> with the computer</li>
+      </ul>
+
+      <h2>Different Game Modes</h2>
+      <ul>
+        <li><strong>Snakes and Ladders</strong> - Play with 2 to 4 players 🐍🪜</li>
+        <li><strong>8 Player Tournaments</strong> – Compete with lots of players online 🏅</li>
+        <li><strong>Daily Goals</strong> – Complete fun tasks and get free dice, coins, and diamonds 💎</li>
+      </ul>
+      <p>Every month, a <strong>new Ludo season</strong> is released to keep things exciting!</p>
+
+      <h2>Game Themes – Make It Colorful!</h2>
+      <ul>
+        <li>Disco / Night Mode 💃🌙</li>
+        <li>Nature 🌿</li>
+        <li>Egypt 🏺</li>
+        <li>Pinball 🎰</li>
+        <li>Candy 🍭</li>
+        <li>Christmas 🎄</li>
+        <li>Penguin 🐧</li>
+        <li>Battle ⚔️</li>
+        <li>Diwali 🪔</li>
+        <li>Pirate 🏴‍☠️</li>
+        <li>Marble ⚪</li>
+        <li>Alien 👽</li>
+        <li>Octopus 🐙</li>
+        <li>Taj Mahal 🕌</li>
+      </ul>
+
+      <h2>How to Play Ludo King®</h2>
+      <ol>
+        <li><strong>Download the app</strong> on Android, iOS, Windows, or even on your computer 💻📱</li>
+        <li><strong>Open the app</strong> and choose your game mode</li>
+        <li>Roll the dice and move your tokens around the board</li>
+        <li>Try to reach the center <strong>before your friends</strong> do</li>
+        <li>If you land at the start of a ladder, climb it to go up faster! 🪜</li>
+        <li>If a snake bites you, you slide down. Oops! 🐍</li>
+      </ol>
+      <p><strong>Tip:</strong> The game is all about <strong>luck and strategy</strong>. Plan your moves carefully and try to block other players.</p>
+
+      <h2>Special Features of Ludo King®</h2>
+      <ul>
+        <li><strong>Play offline</strong> – No internet? No problem! Play with the computer 🤖</li>
+        <li><strong>Local Multiplayer</strong> – Pass your phone and play with friends nearby 👥</li>
+        <li><strong>Online Multiplayer</strong> – Play with friends or random players worldwide 🌍</li>
+        <li><strong>Invite Facebook Friends</strong> – Challenge your buddies in private rooms 📲</li>
+        <li><strong>Private Chat</strong> – Text or voice chat with friends while playing 💬🎤</li>
+        <li><strong>Save & Load Game</strong> – Continue your game anytime 💾</li>
+        <li><strong>Low-End Device Support</strong> – Works smoothly on older phones too 📱</li>
+      </ul>
+
+      <h2>Ludo King® and Snakes & Ladders</h2>
+      <p>Remember Snakes and Ladders from your childhood? Ludo King® includes it too! 🐍🪜 The goal is simple: reach tile 100 first. But you can only move as many spaces as the dice shows. Land on a ladder to climb up, or a snake to slide down. A game full of ups and downs, just like life!</p>
+
+      <h2>Fun Names and Trivia</h2>
+      <p>Did you know Ludo is called different names around the world?</p>
+      <ul>
+        <li>Fia, Le Jeu de Dada, Non t’arrabbiare, Cờ cá ngựa, Uckers, Petits Chevaux…</li>
+        <li>People sometimes misspell it: Loodo, Chakka, Lido, Lado, Ledo, Leedo, Laado, Lodo</li>
+      </ul>
+      <p>No matter the name, it’s <strong>all about fun and family time</strong>! 🥳</p>
+
+      <h2>Follow Ludo King® for News and Updates</h2>
+      <ul>
+        <li>Facebook: <a href="https://www.facebook.com/ludokinggame" target="_blank">https://www.facebook.com/ludokinggame</a></li>
+        <li>Twitter: <a href="https://twitter.com/LudoKingGame" target="_blank">https://twitter.com/LudoKingGame</a></li>
+        <li>YouTube: <a href="https://www.youtube.com/c/LudoKing" target="_blank">https://www.youtube.com/c/LudoKing</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/ludokinggame/" target="_blank">https://www.instagram.com/ludokinggame/</a></li>
+        <li>Official site: <a href="https://ludoking.com" target="_blank">https://ludoking.com</a></li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>Ludo King® is more than a game. It’s <strong>fun, colorful, and social</strong>. You can play with friends, family, or even strangers around the world. It brings <strong>nostalgia</strong> and new excitement together. So roll the dice, move your tokens, and <strong>become the Ludo King! 👑</strong></p>
+    `,
               }}
             />
           </div>

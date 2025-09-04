@@ -133,8 +133,92 @@ const page = () => {
             <div
               className="prose prose-slate prose-lg max-w-none"
               dangerouslySetInnerHTML={{
-                __html:
-                  "UTS on mobile app is an Indian Railways official android mobile ticketing app to book unreserved train tickets. <br> <br>Who can use utsonmobile application? <br>The service is not available to a person under the age of Twelve or previously suspended or removed from the services by Indian Railway.  <br> <br>By accepting the Terms &amp; Conditions or by otherwise using the Service or the website, it would be deemed that the concerned person is at least Twelve years of age and have not been previously suspended or removed from the Services by Indian Railway. The Person represents and warrants that he has the right, authority, and capacity to enter into this Agreement and to abide by all of the terms and conditions of this Agreement. The person shall not impersonate any other person or entity, or falsely state or otherwise misrepresent identity, age or affiliation with any other person or entity. <br> <br>Pre-requisites to avail the utsonmobile app service: ✅<br>Presently, utsonmobile app is available in Android, Windows &amp; iOS versions.  ✓ <br>The Smartphone should have good GPRS connectivity.  ✅ <br>In order to avail paperless mode of tickets, the Smartphone should be GPS enabled. <br>  <br>Registration Process: <br>User Registration for availing the above services can be done through the utsonmobile app or the website (https://www.utsonmobile.indianrail.gov.in). <br>The passenger needs to provide information like Mobile Number, Name, Password, Gender, Date of Birth for the one time registration process. <br>The mobile application would send an OTP to the mobile number specified against the USER ID field to ensure the validity of the mobile number. After successful registration, an SMS will be sent informing the user about the successful registration. A zero-balance R-Wallet account would be activated. <br> <br>Login Process: <br>After the registration, the passenger needs to enter the credentials in the login page for entering into the utsonmobile app.<br><br>Services offered by utsonmobile app: <br>1. Book Ticket: <br>    Normal Booking(Journey and Return tickets)✅ <br>    Quick Booking (Journey and Return tickets)✅  <br>    Platform Ticket ✅ <br>    Season Ticket ✅ <br>    QR Booking (Platform Tickets, Journey and Return Tickets)<br><br>2. Cancellation of Ticket :-<br>Paper Ticket with booking amount greater then cancellation charges can be cancelled using utsonmobile app before printing of ticket. Cancellation of Paperless Ticket is not allowed.<br><br>3. Booking History<br><br>4. R-Wallet:<br>✅R-Wallet Balance ✅ <br>    Recharge R-Wallet✅ <br>    History ✅ <br>    Surrender R-Wallet<br><br>5. Profile:<br>✅Change city ✅ <br>    Change Frequent travel Route ✅ <br>    Change Journey Details ✅ <br>    Change Password ✅ <br>    Change Handset Request ✅ <br>    Change Personal Details ✅ <br>    Sync Ticket<br><br>6. Show Booked Ticket:<br>Using &#39;show ticket&#39; feature the ticket can be showed to the TTE(Travelling Ticket Examiner) or TC. Off-line mode is also available to show the paperless ticket if Internet connection not available in the mobile.<br><br>Note:- <br>Paperless ticket booking(Book and Travel) is not allowed inside train or within station premises to avoid ticket booking just by seeing TTE(Travelling Ticket Examiner) or TC.<br>For booking of paperless ticket user should be away from Station premises/Railway track.<br><br>For Paper Ticket(Book and Print) mode of booking, It is mandatory to take printout of the ticket from ATVM/CoTVM kiosks or General Booking counters at station before boarding the Train.",
+                __html: `
+      <h1>UTS Mobile App – Book Train Tickets Easily!</h1>
+      <p>Hey there! 👋 Do you know that in India, lots of people travel by train every day? Sometimes, buying a ticket at the station can take a long time. But guess what? There is a <strong>special app</strong> called <strong>UTS Mobile App</strong> that lets you buy train tickets using your phone! And you don’t even need to stand in a long line. Cool, right? 😎</p>
+      <p>UTS stands for <strong>Unreserved Ticketing System</strong>, and it is made by <strong>Indian Railways</strong>. This app helps people get <em>unreserved train tickets</em>, which are tickets you can use without booking a seat in advance.</p>
+
+      <h2>Who Can Use the UTS App?</h2>
+      <ul>
+        <li>Only <strong>people who are 12 years old or older</strong> can use it.</li>
+        <li>People who were <strong>removed from the railway services</strong> before cannot use it.</li>
+        <li>You must be honest and not pretend to be someone else.</li>
+      </ul>
+      <p>Basically, if you are old enough and follow the rules, you can use UTS to make your train travel easier! ✅</p>
+
+      <h2>What You Need to Use UTS</h2>
+      <ul>
+        <li>A <strong>smartphone</strong> (Android, iPhone, or Windows phone) 📱</li>
+        <li><strong>Internet connection</strong> (GPRS, 3G, 4G, or Wi-Fi) 🌐</li>
+        <li>If you want <strong>paperless tickets</strong>, your phone needs <strong>GPS</strong> 📍</li>
+      </ul>
+
+      <h2>How to Register in UTS App (Step by Step)</h2>
+      <ol>
+        <li>Download the app from the <a href="https://play.google.com/store/apps/details?id=cris.org.in.prs.utsmobile" target="_blank">Google Play Store</a> or <a href="https://apps.apple.com/in/app/uts/id1100445200" target="_blank">Apple App Store</a>.</li>
+        <li>Open the app and tap <strong>“Register”</strong>.</li>
+        <li>Enter your <strong>Name, Mobile Number, Password, Gender, and Date of Birth</strong>.</li>
+        <li>Verify your mobile number via <strong>OTP</strong>.</li>
+        <li>Hooray! 🎉 Your account is ready, and the app will create an <strong>R-Wallet</strong> starting with zero money.</li>
+      </ol>
+      <p><strong>Tip:</strong> R-Wallet is like a little pocket inside the app where you can keep money to pay for tickets easily. 💰</p>
+
+      <h2>How to Book a Ticket</h2>
+      <ol>
+        <li>Open the app and <strong>log in</strong>.</li>
+        <li>Tap <strong>“Book Ticket”</strong>.</li>
+        <li>Choose <strong>Journey Ticket</strong> or <strong>Return Ticket</strong>.</li>
+        <li>Select your <strong>from</strong> and <strong>to station</strong>.</li>
+        <li>Confirm fare and pay using <strong>R-Wallet</strong>, UPI, or card.</li>
+        <li>Your ticket is ready! You can <strong>show it to the train conductor</strong> from your phone. 📲</li>
+      </ol>
+      <p><strong>Remember:</strong> Paperless tickets cannot be booked inside the station or inside the train. You must be a little away from the station.</p>
+
+      <h2>Other Things You Can Do in UTS App</h2>
+      <ul>
+        <li><strong>Quick Booking:</strong> Book a ticket fast if you are in a hurry. ⏱️</li>
+        <li><strong>Platform Ticket:</strong> Going to see someone off? Book a platform ticket.</li>
+        <li><strong>Season Ticket:</strong> Saves time and money if you travel daily.</li>
+        <li><strong>QR Booking:</strong> Some tickets can be booked using a QR code for easy scanning.</li>
+        <li><strong>Cancel Ticket:</strong> Paper tickets can be cancelled, but paperless tickets cannot ❌.</li>
+      </ul>
+
+      <h2>How to Use R-Wallet</h2>
+      <ol>
+        <li>Open the app and go to <strong>R-Wallet → Recharge</strong>.</li>
+        <li>Add money using <strong>UPI, net banking, or cards</strong>.</li>
+        <li>Check your <strong>balance</strong> anytime.</li>
+        <li>See your <strong>history</strong> of tickets and payments.</li>
+      </ol>
+      <p><strong>Tip:</strong> Keep some money in your R-Wallet so you can quickly buy tickets without waiting.</p>
+
+      <h2>Show Your Ticket to the Conductor</h2>
+      <p>Once your ticket is booked, tap <strong>“Show Ticket”</strong> in the app. The <strong>Train Ticket Examiner (TTE)</strong> or <strong>Ticket Collector (TC)</strong> will check it. Paperless tickets work even <strong>without internet</strong>! 🌐❌</p>
+
+      <h2>Fun Tips for Kids (and Parents)</h2>
+      <ul>
+        <li>Keep your phone safe when showing the ticket.</li>
+        <li>Don’t share your R-Wallet password with anyone 🔒.</li>
+        <li>If traveling with family, you can book multiple tickets at once.</li>
+        <li>Learn about the app before traveling to make your journey smooth 🛤️.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <h3>1. Can I cancel a paperless ticket?</h3>
+      <p>No. Paperless tickets are <strong>non-refundable</strong>.</p>
+
+      <h3>2. Can I book reserved seats?</h3>
+      <p>No. UTS is only for <strong>unreserved tickets</strong>.</p>
+
+      <h3>3. Can I use the app offline?</h3>
+      <p>Yes! You can <strong>show your booked ticket</strong> offline.</p>
+
+      <h3>4. Is UTS app available on iPhone?</h3>
+      <p>Yes, it works on both Android and iPhone.</p>
+
+      <h2>Conclusion</h2>
+      <p>UTS App is like a <strong>magic helper</strong> for train travelers! It saves time, avoids queues, and helps you travel paperless. Follow these steps, keep your phone safe, and enjoy your journey! 🚂</p>
+    `,
               }}
             />
           </div>
