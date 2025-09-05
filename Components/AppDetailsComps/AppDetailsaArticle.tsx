@@ -2,7 +2,7 @@ import React from "react";
 
 const AppDetailsaArticle = () => {
   return (
-    <article className="border-0 border-red-800 px-10 mt-16 prose prose-lg m-auto !max-w-none w-[88%]  ">
+    <article className="border-0 border-red-800 px-4 md:px-10 mt-16 prose prose-lg prose-h1:text-3xl m-auto !max-w-none w-full md:w-[88%]  ">
       <h1>Get App Details from Google Play Store: How to Pull Raw Data Easily</h1>
       <p>
         In todays fast-paced mobile app ecosystem, having access to accurate app data is crucial for developers,

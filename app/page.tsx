@@ -10,11 +10,11 @@ export default function Home() {
   return (
     <>
       <div className="otherContainers  mt-6 ">
-        <ol className=" list-none grid grid-cols-3 gap-6 p-0 m-0">
+        <ol className=" list-none grid grid-cols-3 gap-1 md:gap-6 p-0 m-0">
           <li className="text-center">
             <Link
               href={"/tools"}
-              className=" block no-underline text-lg p-3 font-semibold shadow-md ring-1 rounded-md hover:ring-2"
+              className=" block no-underline text-base md:text-lg p-3 font-semibold shadow-md ring-1 rounded-md hover:ring-2"
             >
               Tools Page
             </Link>
@@ -22,7 +22,7 @@ export default function Home() {
           <li className="text-center">
             <Link
               href={"/apps"}
-              className=" block no-underline text-lg p-3 font-semibold shadow-md ring-1 rounded-md hover:ring-2"
+              className=" block no-underline text-base md:text-lg p-3 font-semibold shadow-md ring-1 rounded-md hover:ring-2"
             >
               Apps Page
             </Link>
@@ -30,14 +30,14 @@ export default function Home() {
           <li className="text-center">
             <Link
               href={"/games"}
-              className=" block no-underline text-lg p-3 font-semibold shadow-md ring-1 rounded-md hover:ring-2"
+              className=" block no-underline text-base md:text-lg p-3 font-semibold shadow-md ring-1 rounded-md hover:ring-2"
             >
               Games Page
             </Link>
           </li>
         </ol>
       </div>
-      <div className="LoadingUI grid  md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-11 md:gap-14 mt-10 mb-8 mx-2 ">
+      <div className="LoadingUI grid  md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-11 md:gap-14 mt-5 md:mt-10 mb-8 mx-2 ">
         {blogPostsObj.map((singleBlogPost, index) => {
           return (
             <div

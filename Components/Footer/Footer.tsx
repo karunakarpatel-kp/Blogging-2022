@@ -33,22 +33,22 @@ const Footer = () => {
         <div className="privacyLinks border-0 border-red-800 col-span-4">
           <ul className="list-none flex flex-wrap px-3 md:space-x-5 text-white justify-evenly md:justify-center md:flex-wrap mt-3">
             <li>
-              <Link href="/contact" className="text-white">
+              <Link href="/contact" className="text-white underline-offset-8">
                 Contact Us
               </Link>
             </li>
             <li>
-              <Link href="/privacy" className="text-white">
+              <Link href="/privacy" className="text-white underline-offset-8">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link href="/disclaimer" className="text-white">
+              <Link href="/disclaimer" className="text-white underline-offset-8">
                 Disclaimer
               </Link>
             </li>
             <li>
-              <Link href="/sitemap.xml" className="text-white">
+              <Link href="/sitemap.xml" className="text-white underline-offset-8">
                 Sitemap
               </Link>
             </li>

@@ -59,10 +59,10 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <>
-      <header className="-mt-3 ">
-        <div className="h-96  bg-slate-100 relative">
+      <header className="-mt-4 ">
+        <div className="h-60 md:h-96  bg-slate-100 relative">
           <Image
-            className="w-full h-96 mt-20"
+            className="w-full h-60 md:h-96 mt-20"
             alt="background-image"
             // fill
             width={920}
@@ -126,15 +126,14 @@ const page = () => {
       {/* Main content */}
       <main className="mx-auto  grid grid-cols-12 gap-4 w-11/12 mt-2 ">
         {/* Left Column */}
-        <section className="col-span-12 md:col-span-8 lg:col-span-8 space-y-8">
+        <section className="col-span-12 md:col-span-8 lg:col-span-8 space-y-8 ">
           {/* About */}
-          <div className="px-6 py-6 pt-2  bg-slate-50  shadow-sm">
-            <h2 className="text-xl font-bold mb-3">About</h2>
+          <div className="px-1 md:px-6 py-6 pt-2  bg-slate-50  shadow-sm">
             <div
-              className="prose prose-slate prose-lg max-w-none"
+              className="prose prose-slate prose-lg max-w-none prose-h1:text-4xl"
               dangerouslySetInnerHTML={{
                 __html: `
-      <h1>UTS Mobile App – Book Train Tickets Easily!</h1>
+      <h1>UTS Mobile App - Book Train Tickets Easily!</h1>
       <p>Hey there! 👋 Do you know that in India, lots of people travel by train every day? Sometimes, buying a ticket at the station can take a long time. But guess what? There is a <strong>special app</strong> called <strong>UTS Mobile App</strong> that lets you buy train tickets using your phone! And you don’t even need to stand in a long line. Cool, right? 😎</p>
       <p>UTS stands for <strong>Unreserved Ticketing System</strong>, and it is made by <strong>Indian Railways</strong>. This app helps people get <em>unreserved train tickets</em>, which are tickets you can use without booking a seat in advance.</p>
 
@@ -286,16 +285,20 @@ const page = () => {
           </div>
 
           {/* Developer Info */}
-          <div className="p-6  bg-slate-50 shadow-sm">
+          <div className="p-6  bg-slate-50 shadow-sm !break-words">
             <h3 className="text-lg font-semibold mb-6">Developer</h3>
             <ul className="space-y-4 text-lg">
               <li>
                 <span className="text-slate-500">Name:</span>{" "}
-                <span className="font-medium">Centre for Railway Information Systems</span>
+                <span className="font-medium break-words">Centre for Railway Information Systems</span>
               </li>
               <li>
                 <span className="text-slate-500">Website:</span>{" "}
-                <Link className="underline" href={"https://www.utsonmobile.indianrail.gov.in"} target="_blank">
+                <Link
+                  className="underline break-words"
+                  href={"https://www.utsonmobile.indianrail.gov.in"}
+                  target="_blank"
+                >
                   https://www.utsonmobile.indianrail.gov.in
                 </Link>
               </li>

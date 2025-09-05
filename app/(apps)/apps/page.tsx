@@ -10,8 +10,8 @@ export const metadata: any = CustomMetaData({ presentURL: SEO_OBJ.APPS_PAGE.abso
 
 const AppsPage = () => {
   return (
-    <div className="AppsPageContainer  grid grid-cols-12 mt-20 min-h-[60vh]">
-      <div className="one col-span-1  hover:scale-105 animate duration-150">
+    <div className="AppsPageContainer grid grid-cols-12 mt-20 min-h-[60vh] gap-2 md:gap-1  px-2">
+      <div className="one col-span-4 md:col-span-1 lg:col-span-1  hover:scale-105 animate duration-150">
         <Link href="/apps/UTS" title="Tools Page" className="no-underline LoadingUI shadow-sm hover:underline ">
           <div className="col-span-12  p-0 m-0 flex justify-center align-middle relative h-32">
             <Image

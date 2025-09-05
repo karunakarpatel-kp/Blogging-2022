@@ -59,10 +59,10 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <>
-      <header className="-mt-3 ">
-        <div className="h-96  bg-slate-100 relative">
+      <header className="-mt-4 ">
+        <div className="h-60 md:h-96  bg-slate-100 relative">
           <Image
-            className="w-full h-96 mt-20"
+            className="w-full h-60 md:h-96 mt-20"
             alt="background-image"
             // fill
             width={920}
@@ -126,13 +126,12 @@ const page = () => {
         {/* Left Column */}
         <section className="col-span-12 md:col-span-8 lg:col-span-8 space-y-8">
           {/* About */}
-          <div className="px-6 py-6 pt-2  bg-slate-50  shadow-sm">
-            <h2 className="text-xl font-bold mb-3">About</h2>
+          <div className="px-1 md:px-6 py-6 pt-2  bg-slate-50  shadow-sm">
             <div
-              className="prose prose-slate prose-lg max-w-none"
+              className="prose prose-slate prose-lg max-w-none prose-h1:text-4xl"
               dangerouslySetInnerHTML={{
                 __html: `
-      <h1>Ludo King® – Play the Classic Board Game on Your Phone!</h1>
+      <h1>Ludo King® - Play the Classic Board Game on Your Phone!</h1>
       <p>Hello there! 👋 Do you like playing games with your friends and family? Guess what! There’s a super fun game called <strong>Ludo King®</strong>, and now you can play it right on your phone or tablet. You don’t need a board, dice, or tokens, everything is digital! 🎲</p>
       <p>Ludo King® is the modern version of the classic game of <strong>Ludo</strong> that kings and queens used to play a long time ago in India. It’s a fun game where you roll dice, move your tokens, and try to reach the center of the board before your friends. 🏆</p>
 
@@ -301,7 +300,7 @@ const page = () => {
           </div>
 
           {/* Developer Info */}
-          <div className="p-6  bg-slate-50 shadow-sm">
+          <div className="p-6  bg-slate-50 shadow-sm !break-words">
             <h3 className="text-lg font-semibold mb-6">Developer</h3>
             <ul className="space-y-4 text-lg">
               <li>
