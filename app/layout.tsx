@@ -19,18 +19,16 @@ interface RootLayoutProps {
 const RootLayout = (props: RootLayoutProps) => {
   return (
     <html lang="en" className={"transition-all duration-300"}>
-      <Head>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-        />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-        />
-      </Head>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+      />
       <body className="relative p-0 m-0 bg-white dark:bg-slate-900 dark:prose-invert prose prose-stone min-h-[65vh] max-w-full border-0 border-sky-400  h-full overflow-x-hidden">
         <ReadingProgressBar />
 
