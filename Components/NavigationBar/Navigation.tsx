@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Logo from "public/Logo.svg";
 import Image from "next/image";
-import { FaBlog, FaCar, FaCarSide, FaHome, FaToolbox } from "react-icons/fa";
+import { FaAppStore, FaBlog, FaCar, FaCarSide, FaFantasyFlightGames, FaHome, FaToolbox, FaTools } from "react-icons/fa";
 import { GiHamburgerMenu, GiToolbox } from "react-icons/gi";
 import { usePathname, useRouter } from "next/navigation";
 import { IoMdClose } from "react-icons/io";
@@ -45,14 +45,12 @@ const Navigation = (props: NavigationProps) => {
       <div
         className={
           !openMobileMenu
-            ? "h-16  bg-brandColor border-b border-b-gray-500 dark:bg-slate-900 dark:border-b dark:border-b-slate-700  md:ml-0 pl-2 grid grid-cols-12 fixed w-full z-50"
+            ? "h-16  bg-brandColor border-b border-b-gray-500  md:ml-0 pl-2 grid grid-cols-12 fixed w-full z-50"
             : ""
         }
       >
         {/* Desktop */}
-        <div className="hidden md:invisible md:flex col-span-1 border-0 border-white self-stretch justify-center items-center ">
-          left
-        </div>
+        <div className="hidden md:invisible md:flex col-span-1 border-0 border-white self-stretch justify-center items-center "></div>
         <div
           className="col-span-9 md:col-span-4 border-0 border-green-800 mt-1 ml-0 cursor-pointer"
           onClick={onLogoClickHandler}
@@ -134,20 +132,23 @@ const Navigation = (props: NavigationProps) => {
           </svg>
         </div>
         <div className="hidden md:block col-span-6 border-0 border-purple-400 m-0 p-0 ">
-          <ul className="list-none flex space-x-6 text-white justify-end mt-2">
+          <ul className="list-none flex space-x-2 text-white justify-end mt-2">
             <li>
               <Link
                 href="/"
                 className={`${
                   pathName === "/" ? "text-[#ffca3c]" : "text-white"
-                } font-normal text-xl underline underline-offset-4 decoration-slate-300`}
+                } text-base shadow-md border border-slate-500 px-5 py-1 no-underline font-medium rounded-sm hover:underline hover:underline-offset-4`}
               >
                 {/* <FaHome size={27} /> */}
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/tools" className="text-white text-xl underline-offset-4 font-normal decoration-slate-300">
+              <Link
+                href="/tools"
+                className="text-white text-base shadow-md border border-slate-500 px-5 py-1 no-underline font-medium rounded-sm hover:underline hover:underline-offset-4"
+              >
                 Tools
               </Link>
             </li>
@@ -156,19 +157,25 @@ const Navigation = (props: NavigationProps) => {
                 href="/Blog"
                 className={`${
                   pathName === "/Blog" || pathName!.includes("/Blog") ? "text-[#ffca3c] " : "text-white"
-                } font-normal text-xl underline underline-offset-4 decoration-slate-300`}
+                } text-base shadow-md border border-slate-500 px-5 py-1 no-underline font-medium rounded-sm hover:underline hover:underline-offset-4`}
               >
                 {/* <FaBlog size={25} className="pt-0" /> */}
                 Blog
               </Link>
             </li>
             <li>
-              <Link href="/apps" className="text-white text-xl underline-offset-4 font-normal decoration-slate-300">
+              <Link
+                href="/apps"
+                className="text-white text-base shadow-md border border-slate-500 px-5 py-1 no-underline font-medium rounded-sm hover:underline hover:underline-offset-4"
+              >
                 Apps
               </Link>
             </li>
             <li>
-              <Link href="/games" className="text-white text-xl underline-offset-4 font-normal decoration-slate-300">
+              <Link
+                href="/games"
+                className="text-white text-base shadow-md border border-slate-500 px-5 py-1 no-underline font-medium rounded-sm hover:underline hover:underline-offset-4"
+              >
                 Games
               </Link>
             </li>
@@ -179,22 +186,21 @@ const Navigation = (props: NavigationProps) => {
           <GiHamburgerMenu size={27} fill="white" onClick={onOpenClickHandler} />
         </div>
 
-        <div className="hidden md:invisible md:flex col-span-1 border border-white self-stretch justify-center items-center ">
-          Right
-        </div>
+        <div className="hidden md:invisible md:flex col-span-1 border border-white self-stretch justify-center items-center "></div>
       </div>
 
       {/* Mobile */}
       <div
         className={
           openMobileMenu
-            ? "mobile block md:block bg-slate-900 w-full h-svh z-50 p-0 m-0 fixed top-0 right-0 ease-in-out"
+            ? "mobile block md:block bg-brandColor w-full h-svh z-50 p-0 m-0 fixed top-0 right-0 ease-in-out"
             : "hidden"
         }
       >
         <div
           className="mt-1 ml-0 cursor-pointer p-1 pb-4 mb-4 border-b border-b-slate-700"
           onClick={onLogoClickHandler}
+          onClickCapture={onCloseClickHandler}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="200" height="48" viewBox="0 0 287 83">
             <g id="Group_39" data-name="Group 39" transform="translate(-370 -18)">
@@ -273,9 +279,6 @@ const Navigation = (props: NavigationProps) => {
 
         <div className={openMobileMenu ? "absolute right-5 top-5 cursor-pointer border" : ""}>
           <IoMdClose size={26} fill="white" onClick={onCloseClickHandler} />
-          {/* <button className="text-white bg-slate-500 px-9 py-1" onClick={onCloseClickHandler}> */}
-          {/* Close */}
-          {/* </button> */}
         </div>
         <ul className="list-none  text-white p-0 m-0">
           <li className="p-3 m-0">
@@ -306,21 +309,55 @@ const Navigation = (props: NavigationProps) => {
               Blog
             </Link>
           </li>
-          {/* <li className="p-3 m-0 -mt-2">
-            <Link href="/" className="border-b block no-underline text-white pb-2 m-0" onClick={onCloseClickHandler}>
-              Contact Me
+
+          <li className="p-3 m-0 -mt-0">
+            <Link
+              href="/tools"
+              className={`${
+                pathName === "/cars" || pathName!.includes("/Blog") ? "text-[#ffca3c]" : "text-white"
+              } border-b border-dotted no-underline pb-3 m-0 flex gap-3 ml-2 mr-2 `}
+              onClick={onCloseClickHandler}
+            >
+              <span>
+                <FaTools size={25} className="pt-0" />
+              </span>
+              Tools
             </Link>
-          </li> */}
+          </li>
+
+          <li className="p-3 m-0 -mt-0">
+            <Link
+              href="/apps"
+              className={`${
+                pathName === "/cars" || pathName!.includes("/Blog") ? "text-[#ffca3c]" : "text-white"
+              } border-b border-dotted no-underline pb-3 m-0 flex gap-3 ml-2 mr-2 `}
+              onClick={onCloseClickHandler}
+            >
+              <span>
+                <FaAppStore size={25} className="pt-0" />
+              </span>
+              Apps
+            </Link>
+          </li>
+
+          <li className="p-3 m-0 -mt-0">
+            <Link
+              href="/games"
+              className={`${
+                pathName === "/cars" || pathName!.includes("/Blog") ? "text-[#ffca3c]" : "text-white"
+              } border-b border-dotted no-underline pb-3 m-0 flex gap-3 ml-2 mr-2 `}
+              onClick={onCloseClickHandler}
+            >
+              <span>
+                <FaFantasyFlightGames size={25} className="pt-0" />
+              </span>
+              Games
+            </Link>
+          </li>
         </ul>
       </div>
 
-      <div
-        className={`${
-          homePage
-            ? "bg-brandColor dark:bg-slate-900 dark:border-b dark:border-b-slate-700  border-0 border-red-900 px-10"
-            : "hidden"
-        }`}
-      >
+      <div className={`${homePage ? "bg-brandColor border-0 border-red-900 px-10" : "hidden"}`}>
         <div className="border-0 border-white text-white   max-w-7xl m-auto pt-14">
           <div className="kpImage border-0 border-sky-800 flex justify-center">
             <Image src={KarunakarPatelImage} alt="Karunakar Patel Image" className="ring-2  rounded-full" />
