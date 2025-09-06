@@ -30,7 +30,7 @@ import React from "react";
 
 export const metadata: Metadata = {
   title: "${app.totalAppDetails.title}",
-   description: "${seoDescription}",
+   description: "",
   keywords: ['${app.totalAppDetails.genre}',' ${app.totalAppDetails.title}', '${
       app.totalAppDetails.developer
     }', 'karunakar patel'],
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: '${app.totalAppDetails.title}',
-    description: "${seoDescription}",
+    description: "",
     url:  "${folderPath}",
     siteName: 'Play out the game of ${app.totalAppDetails.title}',
     images: [
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "${app.totalAppDetails.title}",
-    description: "${seoDescription}",
+    description: "",
     images: ["${app.totalAppDetails.headerImage}"],
   },
   icons: {
@@ -81,10 +81,10 @@ const page = () => {
 
   return (
     <>
-    <header className="-mt-3 ">
-        <div className="h-96  bg-slate-100 relative">
+    <header className="-mt-4 ">
+        <div className="h-60 md:h-96  bg-slate-100 relative">
           <Image
-            className="w-full h-96 mt-20"
+            className="w-full h-60 md:h-96 mt-20"
             alt="background-image"
             // fill
             width={920}
@@ -148,10 +148,9 @@ const page = () => {
         {/* Left Column */}
         <section className="col-span-12 md:col-span-8 lg:col-span-8 space-y-8">
           {/* About */}
-          <div className="px-6 py-6 pt-2  bg-slate-50  shadow-sm">
-            <h2 className="text-xl font-bold mb-3">About</h2>
+          <div className="px-1 md:px-6 py-6 pt-2  bg-slate-50  shadow-sm">
              <div
-              className="prose prose-slate prose-lg max-w-none"
+              className="prose prose-slate prose-lg max-w-none prose-h1:text-4xl"
               dangerouslySetInnerHTML={{
                 __html:
                   "${app.totalAppDetails.descriptionHTML}"
@@ -169,7 +168,7 @@ const page = () => {
               slickObj={${JSON.stringify(app.totalAppDetails.screenshots)}}
             />
           </div>
-
+            
           {/* Trailer */}
           <div className="space-y-4">
             <h2 className="text-xl font-bold">${app.totalAppDetails.title} Trailer</h2>
@@ -188,7 +187,7 @@ const page = () => {
         <aside className="col-span-12 md:col-span-4 lg:col-span-4 space-y-6">
           {/* Meta */}
           <div className=" py-2 px-6 bg-slate-50  shadow-sm">
-            <h3 className="text-lg font-semibold mb-3 text-center underline underline-offset-4 ">About the Game</h3>
+            <h3 className="text-lg font-semibold mb-3 text-center underline underline-offset-4">About the Game</h3>
             <dl className="grid grid-cols-2 gap-y-2 text-base">
               <dt className="text-slate-700">Ratings</dt>
               <dd className="font-medium">${app.totalAppDetails.ratings}</dd>
@@ -208,23 +207,25 @@ const page = () => {
           </div>
 
           {/* Developer Info */}
-          <div className="p-6  bg-slate-50 shadow-sm">
+          <div className="p-6  bg-slate-50 shadow-sm break-words">
             <h3 className="text-lg font-semibold mb-6">Developer</h3>
             <ul className="space-y-4 text-lg">
               <li>
-                <span className="text-slate-500">Name:</span> <span className="font-medium">${
+                <span className="text-slate-500">Name:</span> <span className="font-medium break-words ">${
                   app.totalAppDetails.developerLegalName
                 }</span>
               </li>
               <li>
                 <span className="text-slate-500">Website:</span>{" "}
-                <Link className="underline" href={"${app.totalAppDetails.developerWebsite}"} target="_blank">
+                <Link className="underline break-words" href={"${
+                  app.totalAppDetails.developerWebsite
+                }"} target="_blank">
                 ${app.totalAppDetails.developerWebsite}
                 </Link>
               </li>
               <li>
                 <span className="text-slate-500">Email:</span>{" "}
-                <Link className="underline" href="${app.totalAppDetails.developerLegalEmail}">
+                <Link className="underline break-words" href="${app.totalAppDetails.developerLegalEmail}">
                 ${app.totalAppDetails.developerLegalEmail}
                 </Link>
               </li>

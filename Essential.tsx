@@ -453,6 +453,21 @@ export const SEO_OBJ: SEO_OBJ_Props = {
     changeFrequency: "daily",
     tags: [{ tag: "games", href: "/games" }],
   },
+
+  PIZZA_READY: {
+    absoluteURL: "https://www.karunakarpatel.com/games/pizza-ready",
+    relativeURL: "/games/pizza-ready",
+    title: "",
+    description: "",
+    lastUpdateTime: `${dynamicLastUpdatedTime()}`,
+    publishedTime: "2025-09-06T08:19:55+00:00",
+    featuredImage: welcomePatelsImage,
+    featuredImageAltText: "a-person-with-computer",
+    ogImageURL: `${BASE_URLS.HOME_PAGE_BASE_URL}/welcome-page.png`,
+    changeFrequency: "daily",
+    tags: [{ tag: "games", href: "/games" }],
+  },
+
   UTS: {
     absoluteURL: "https://www.karunakarpatel.com/apps/UTS",
     relativeURL: "/apps/UTS",
